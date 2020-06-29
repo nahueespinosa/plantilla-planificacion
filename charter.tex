@@ -21,8 +21,8 @@
 \pertenenciaCoDirector{}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Trenes Argentinos Operaciones (SOFSE)}
+\cliente{SOFSE}
+\empresaCliente{Trenes Argentinos Operaciones}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
 \juradoUno{Nombre y Apellido (1)}
@@ -109,37 +109,68 @@ Se adjunta a esta acta la planificación inicial.
 \section{Descripción técnica-conceptual del Proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red}
-El objetivo es que el lector en una o dos páginas entienda de qué se trata el proyecto y cuáles son sus desafíos, su motivación y su importancia.
-Se debe destacar claramente cuál es el valor que agrega el proyecto a realizar. ``El presente proyecto se destaca especialmente por incorporar tal cosa... Esto lo diferencia de otros sistemas similares en que ...''
+Las formaciones ferroviarias cuentan con diferentes sistemas de seguridad a bordo. Los mismos son equipos que se
+encargan de supervisar el correcto funcionamiento de los subsistemas críticos. Ejemplos de los mismos son la seguridad
+de puertas, el sistema de hombre vivo y la protección de coche a la deriva.
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+Ante una falla en uno de estos subsistemas, una formación ferroviaria se detiene inmediatamente por la activación 
+automática de las señales de corte de tracción y frenado de emergencia. En esta situación el conductor debe llevar a la 
+formación a un lugar seguro para que los pasajeros puedan descender y posteriormente a un taller para que pueda ser 
+reparada.
 
-\begin{itemize}
-\item ¿Cómo se vincula este proyecto con la misión de la organización?
-\item ¿Cómo se inserta este proyecto en el modelo de negocio de la organización?
-\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-\item ¿En qué estado del ciclo de vida está el producto que se desea reemplazar o mejorar?
-\item ¿Cuales son las necesidades que debe satisfacer?
-\item ¿Por dónde pasa la innovación?
-\end{itemize}
+En el año 2017, la empresa estatal Trenes Argentinos Operaciones (SOFSE) encargó al CONICET-GICSAFe el desarrollo de un 
+equipo que le permita al conductor inhabilitar las señales de corte de tracción (CT) y frenado de emergencia (FE) sin comprometer 
+la seguridad de la formación y sus pasajeros. Este equipo se conoce en el ámbito local como Sistema de Aislamiento 
+Limitado/Total (SAL/T) y se considera un sistema crítico debido a que, en caso de fallar, puede 
+ocasionar daños afectando negativamente la salud de las personas, al medio ambiente y/o generar grandes pérdidas 
+materiales.
 
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema }y una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''. Luego recién más abajo de haber puesto esta frase se pone la figura. La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+En el año 2019 se concluyó el desarrollo de un prototipo funcional del SAL/T siguiendo las primeras cinco fases del 
+ciclo de vida propuesto por la norma UNE-EN 50126 para aplicaciones ferroviarias. En la Figura 
+\ref{fig:ciclo_de_vida_50126} se resaltan las fases del ciclo de vida completadas en el marco del trabajo de tesis del 
+Ing. Ivan Di Vito. La documentación de la sexta fase, que corresponde al diseño e implementación del sistema, y las
+fases posteriores quedaron fuera del alcance del trabajo original.
 
 \vspace{25px}
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.7\textwidth]{./Figuras/diagBloques.png}
-\caption{Diagrama en bloques del sistema}
-\label{fig:diagBloques}
+\includegraphics[width=1\textwidth]{./Figuras/ciclo_de_vida_50126.png}
+\caption{Ciclo de vida de un sistema propuesto por la norma UNE-EN 50126.}
+\label{fig:ciclo_de_vida_50126}
 \end{figure}
 
 \vspace{25px}
 
-El tamaño de la tipografía en la figura debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama.
-\end{consigna}
+En la Figura \ref{fig:diagrama_de_bloques} se puede ver como el SAL/T interactúa con las señales CT y FE. 
+En modo de funcionamiento normal los subsistemas de seguridad tienen conexión directa con el control central dado que el 
+SAL/T se comporta como un cable a través de los relés K2 y K4. Ante la activación por parte del conductor del modo 
+aislado limitado (AL) el SAL/T toma el control de dichas señales.
 
+\vspace{15px}
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.95\textwidth]{./Figuras/diagrama_de_bloques.png}
+\caption{Diagrama conceptual de la interacción del SAL/T con los sistemas de seguridad en una formación.}
+\label{fig:diagrama_de_bloques}
+\end{figure}
+
+\vspace{15px}
+
+Este proyecto continuará con el desarrollo del SAL/T buscando alcanzar niveles de seguridad adecuados para su uso a 
+criterio de las autoridades SOFSE y CNRT, e incorporando las siguientes mejoras:
+
+\begin{itemize}
+\item El diseño del firmware buscará seguir una metodología acorde a la norma UNE-EN
+50128 (centrada en la calidad de los aspectos de software de los sistemas de ferrocarriles), para lo cual será necesario
+utilizar herramientas de integración continua y ensayos a lo largo del proyecto.
+\item En el nuevo diseño de la placa principal se reemplazará la plataforma EDU-CIAA-NXP, utilizada como base en la primera 
+versión, por un módulo ad-hoc de procesamiento.
+\end{itemize}
+
+También se hará una revisión de los requisitos del cliente y de posibles nuevas funciones cómo conectividad
+satelital.
 
 \section{Identificación y análisis de los interesados}
 \label{sec:interesados}
