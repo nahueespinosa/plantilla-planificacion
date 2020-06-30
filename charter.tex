@@ -125,13 +125,27 @@ Limitado/Total (SAL/T) y se considera un sistema crítico debido a que, en caso 
 ocasionar daños afectando negativamente la salud de las personas, al medio ambiente y/o generar grandes pérdidas 
 materiales.
 
-En el año 2019 se concluyó el desarrollo de un prototipo funcional del SAL/T siguiendo las primeras cinco fases del 
-ciclo de vida propuesto por la norma UNE-EN 50126 para aplicaciones ferroviarias. En la Figura 
-\ref{fig:ciclo_de_vida_50126} se resaltan las fases del ciclo de vida completadas en el marco del trabajo de tesis del 
-Ing. Ivan Di Vito. La documentación de la sexta fase, que corresponde al diseño e implementación del sistema, y las
-fases posteriores quedaron fuera del alcance del trabajo original.
+En el año 2019 se concluyó el desarrollo de un prototipo funcional del SAL/T  en el marco del trabajo de tesis del Ing. 
+Ivan Di Vito. En la Figura \ref{fig:diagrama_de_bloques} se puede ver como interactúa con las señales CT y FE. En modo 
+de funcionamiento normal los subsistemas de seguridad tienen conexión directa con el control central. Ante la activación 
+por parte del conductor del modo aislado limitado (AL) el SAL/T toma el control de dichas señales.
 
-\vspace{25px}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.85\textwidth]{./Figuras/diagrama_de_bloques.png}
+\caption{Diagrama conceptual de la interacción del SAL/T con los sistemas de seguridad en una formación.}
+\label{fig:diagrama_de_bloques}
+\end{figure}
+
+El SAL/T monitorea la velocidad de la formación e informa su estado interno al registrador de eventos Hasler Teloc 1500 
+y a una central operativa, a través de un enlace de comunicación redundado, de la cual también puede recibir comandos 
+remotos que modifiquen su comportamiento.
+
+En la Figura \ref{fig:ciclo_de_vida_50126} se resaltan las cinco primeras fases completadas del ciclo de vida propuesto 
+por la norma UNE-EN 50126 para aplicaciones ferroviarias. La documentación de la sexta fase, que corresponde al diseño 
+e implementación del sistema, y las fases posteriores quedaron fuera del alcance del trabajo original.
+
+\vspace{10px}
 
 \begin{figure}[htpb]
 \centering 
@@ -140,36 +154,24 @@ fases posteriores quedaron fuera del alcance del trabajo original.
 \label{fig:ciclo_de_vida_50126}
 \end{figure}
 
-\vspace{25px}
-
-En la Figura \ref{fig:diagrama_de_bloques} se puede ver como el SAL/T interactúa con las señales CT y FE. 
-En modo de funcionamiento normal los subsistemas de seguridad tienen conexión directa con el control central. Ante la 
-activación por parte del conductor del modo aislado limitado (AL) el SAL/T toma el control de dichas señales.
-
-\vspace{15px}
-
-\begin{figure}[htpb]
-\centering 
-\includegraphics[width=.95\textwidth]{./Figuras/diagrama_de_bloques.png}
-\caption{Diagrama conceptual de la interacción del SAL/T con los sistemas de seguridad en una formación.}
-\label{fig:diagrama_de_bloques}
-\end{figure}
-
-\vspace{15px}
+\vspace{10px}
 
 Este proyecto continuará con el desarrollo del SAL/T buscando alcanzar niveles de seguridad adecuados para su uso a 
-criterio de las autoridades SOFSE y CNRT, e incorporando las siguientes mejoras:
+criterio de las autoridades SOFSE y CNRT. Se revisarán los requisitos de seguridad RAMS establecidos en la cuarta fase 
+del trabajo original, se diseñarán subsistemas que se ajusten a los requisitos y se verificará el nivel de integridad 
+de seguridad (SIL).
+
+Para el caso específico de los sistemas eléctrico-programables (EP) la fase de diseño y desarrollo se divide en dos 
+partes relacionadas con el desarrollo del hardware y del software.
 
 \begin{itemize}
-\item El diseño del firmware buscará seguir una metodología acorde a la norma UNE-EN
-50128 (centrada en la calidad de los aspectos de software de los sistemas de ferrocarriles), para lo cual será necesario
-utilizar herramientas de integración continua y ensayos a lo largo del proyecto.
+\item El diseño del software buscará seguir una metodología acorde a la norma UNE-EN 50128 centrada en la calidad de los 
+aspectos de software de los sistemas de ferrocarriles.
 \item En el nuevo diseño de la placa principal se reemplazará la plataforma EDU-CIAA-NXP, utilizada como base en la primera 
 versión, por un módulo ad-hoc de procesamiento.
 \end{itemize}
 
-También se hará una revisión de los requisitos del cliente y de posibles nuevas funciones como conectividad
-satelital.
+\newpage
 
 \section{Identificación y análisis de los interesados}
 \label{sec:interesados}
