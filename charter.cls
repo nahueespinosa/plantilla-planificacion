@@ -108,6 +108,8 @@
 \renewcommand{\labelenumii}{\theenumii}
 \renewcommand{\theenumii}{\theenumi.\arabic{enumii}.}
 
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
+
 \hypersetup{
   bookmarksnumbered = true, 
   pdftitle={\@title}, 
