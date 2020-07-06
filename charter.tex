@@ -231,7 +231,7 @@ Por ejemplo:
 \section{1. Propósito del proyecto}
 \label{sec:proposito}
 
-El propósito de este proyecto continuar el desarrollo de un sistema de supervisión de seguridad de formaciones ferroviarias 
+El propósito de este proyecto es continuar el desarrollo de un sistema de supervisión de seguridad de formaciones ferroviarias 
 denominado SAL/T (Sistema de Aislamiento Limitado/Total) que alcance niveles RAMS adecuados para su uso a criterio de las autoridades SOFSE y CNRT.
 
 \section{2. Alcance del proyecto}
@@ -252,6 +252,7 @@ El presente proyecto NO incluye:
 \begin{itemize}
 \item Desarrollo de la séptima fase y posteriores del ciclo de vida del proyecto (producción, instalación, validación, etc.).
 \item Desarrollo del software necesario para la central operativa.
+\item Modificación del gabinete.
 \item Certificación de los sistemas a ser desarrollados.
 \end{itemize}
 
@@ -273,39 +274,79 @@ siendo válidos para la segunda iteración del proyecto.
 \section{4. Requerimientos}
 \label{sec:requerimientos}
 
-\begin{consigna}{red}
-Los requerimientos deben numerarse y de ser posible agruparlos por afinidad:
+Estos requerimientos fueron obtenidos a partir del documento ''R\_DCP\_10 Definición Conceptual del Proyecto - Fase 1''. El mismo
+fue creado originalmente por el Ing. Ivan Di Vito siguiendo la recomendación de la norma UNE-EN 50126 como resultado de múltiples 
+reuniones con las diferentes partes interesadas en la realización del proyecto. 
+
+Esas reuniones incluyeron la participación de personal de SOFSE de la Gerencia
+de Seguridad Operacional, del departamento de material rodante y de personal de los talleres de reparación y mantenimiento
+de Liniers y Victoria. También participó personal de la Comisión Nacional de Regulación del Transporte (CNRT).
+
+Se estudió la documentación original teniendo en cuenta el estado actual del prototipo y se redactaron los requerimientos
+agrupándolos por afinidad:
 
 \begin{enumerate}
-\item Grupo de requerimientos asociados con...
-	\begin{enumerate}
-	\item Requerimiento 1
-	\item Requerimiento 2
-	\item Requerimiento 3 (prioridad menor)
-	\end{enumerate}
-\item Grupo de requerimientos asociados con...
-	\begin{enumerate}
-	\item Requerimiento 1
-	\item Requerimiento 2 (prioridad menor)
-	\end{enumerate}
+\item Grupo de requerimientos asociados al modo normal de funcionamiento
+  \begin{enumerate}
+  \item No debe intervenir en el funcionamiento del material rodante.
+  \item Debe obtener en todo momento la mejor estimación posible de la velocidad de la formación.
+    \begin{enumerate}
+    \item Debe ser capaz de recibir la velocidad a partir de una señal digital provista por el registrador de eventos Hasler Teloc 1500.
+    \item Debe ser capaz de calcular la velocidad a partir de un generador de impulsos ópticos instalado en una o varias ruedas de la formación.
+    \item Debe ser capaz de calcular la velocidad a partir de un sistema GPS integrado.
+    \end{enumerate}
+  \item El rango de velocidad soportado por el sistema tiene que estar entre 0 y 120 km/h.
+  \item La estimación de velocidad debe tener una precisión del 2\% de fondo de escala. 
+  \end{enumerate}
+\item Grupo de requerimientos asociados al modo aislado limitado
+  \begin{enumerate}
+  \item Debe evitar la aplicación del corte de tracción y/o freno de emergencia por parte de los subsistemas de seguridad del material rodante.
+  \item Debe evitar que la velocidad del material rodante supere una serie de límites configurados.
+  \begin{enumerate}
+    \item Si al pasar de modo normal a modo aislado limitado no se cuenta con una estimación de velocidad, debe activar el corte de tracción y el freno de emergencia por 30 segundos.
+    \item Si se supera una determinada velocidad configurable, debe activar el corte de tracción y si se supera otra velocidad mayor debe activar el freno de emergencia.
+    \item Si se supera una determinada velocidad configurable, debe emitir una señal sonora intermitente a través de un buzzer.
+    \item Una vez aplicado, el corte de tracción debe dejar de aplicarse si la velocidad vuelve a ser menor a una velocidad configurable. 
+    \item Una vez aplicado, el freno de emergencia sólo debe dejar de aplicarse luego de un tiempo configurable desde que se superó el límite.
+    \item Si la lectura de velocidad es inválida, debe activar y desactivar el corte de tracción y freno de emergencia de manera alternada en ciclos de tiempo configurables.
+  \end{enumerate}
+  \end{enumerate}
+\item Grupo de requerimientos asociados con la interfaz humano-máquina
+  \begin{enumerate}
+  \item Debe contar con una llave rotativa precintable para activar el modo aislado limitado.
+  \item Debe indicar el estado del sistema.
+  \item Debe mostrar la velocidad media del equipo en km/h (3 ó 4 dígitos).
+  \item Debe indicar el estado de las señales de corte de tracción y freno de emergencia.
+  \item Debe indicar la presencia de un comando remoto de la central operativa.
+  \item Debe indicar el estado de los módulos GPS.
+  \end{enumerate}
+\item Grupo de requerimientos asociados con las comunicaciones
+  \begin{enumerate}
+    \item Debe informar al registrador de eventos la activación del modo aislado limitado.
+    \item Debe informar al registrador de eventos si la alimentación es correcta.
+    \item Debe informar al registrador de eventos la activación del freno de emergencia.
+    \item Debe informar al registrador de eventos la activación del corte de tracción.
+    \item Debe informar periódicamente el estado del sistema a la central operativa a través de la red de datos GPRS.
+    \item Debe ser capaz de recibir un comando remoto que anule el corte de tracción y el freno de emergencia bajo cualquier condición (modo aislado total).
+    \item Debe ser capaz de recibir un comando remoto que active el corte de tracción y el freno de emergencia bajo cualquier condición (modo parada total).
+    \item Debe ser capaz de recibir un comando remoto que active el corte de tracción y anule el freno de emergencia bajo cualquier condición (modo coche en deriva).
+    \item Debe ser capaz de recibir un comando remoto que active el corte de tracción y el freno de emergencia de forma intermitente en ciclos de tiempo configurables (modo intermitente).
+    \item Debe ser capaz de recibir un comando remoto que cancele cualquier comando remoto vigente (exit). 
+    \item Debe ser capaz de recibir comandos remotos que modifiquen sus parámetros internos configurables.
+    \item Si no recibe un nuevo comando remoto luego de un tiempo configurable, debe volver al algoritmo de activación de corte de tracción y freno de emergencia por defecto.
+    \item Ante un comando remoto recibido debe enviar una confirmación de recepción que permita a la central operativa decidir si es necesaria o no una retransmisión.
+    \item Debe utilizar algún mecanismo de encriptación para el enlace con la central operativa.
+  \end{enumerate}
+\item Grupo de requerimientos asociados al hardware y al gabinete
+  \begin{enumerate}
+    \item La tensión nominal de alimentación debe estar comprendida entre 72 V y 120 V.
+    \item Los conectores deben ser unívocos imposibilitando la conexión incorrecta.
+    \item Debe poseer una única placa para el procesamiento principal.
+    \item Debe estar diseñado para ser instalado en la locomotora sobre el pupitre.
+    \item El gabinete debe tener grado de seguridad IP66 o superior (protección contra polvo e inmersión completa en agua).
+  \end{enumerate}
 \end{enumerate}
 
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-
-De ser posible indicar cómo se obtuvieron cada uno de los requerimientos 
-
-Indicar claramente cuál es la prioridad entre los distintos requerimientos. 
-
-No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-\item Ser breve y conciso (nadie lee cosas largas). 
-\item Ser específico: no dejar lugar a confusiones.
-\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
-
-\end{consigna}
 
 \section{5. Entregables principales del proyecto}
 \label{sec:entregables}
@@ -377,11 +418,13 @@ Armar el AoN a partir del WBS definido en la etapa anterior.
 \label{fig:AoN}
 \end{figure}
 
+\begin{consigna}{red}
+
 Indicar claramente en qué unidades están expresados los tiempos.
 De ser necesario indicar los caminos semicríticos y analizar sus tiempos mediante un cuadro.
 Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color, como se muestra en el siguiente ejemplo:
 
-
+\end{consigna}
 
 \section{8. Diagrama de Gantt}
 \label{sec:gantt}
