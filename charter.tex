@@ -288,7 +288,7 @@ agrupándolos por afinidad:
 \begin{enumerate}
 \item Grupo de requerimientos asociados al modo normal de funcionamiento
   \begin{enumerate}
-  \item No debe intervenir en el funcionamiento del material rodante.
+  \item No debe intervenir en el funcionamiento del material rodante (prioridad alta).
   \item Debe obtener en todo momento la mejor estimación posible de la velocidad de la formación.
     \begin{enumerate}
     \item Debe ser capaz de recibir la velocidad a partir de una señal digital provista por el registrador de eventos Hasler Teloc 1500.
@@ -301,16 +301,18 @@ agrupándolos por afinidad:
 \item Grupo de requerimientos asociados al modo aislado limitado
   \begin{enumerate}
   \item Debe evitar la aplicación del corte de tracción y/o freno de emergencia por parte de los subsistemas de seguridad del material rodante.
+  \item Debe emitir una señal sonora intermitente a través de un buzzer.
   \item Debe evitar que la velocidad del material rodante supere una serie de límites configurados.
-  \begin{enumerate}
+    \begin{enumerate}
     \item Si al pasar de modo normal a modo aislado limitado no se cuenta con una estimación de velocidad, debe activar el corte de tracción y el freno de emergencia por 30 segundos.
-    \item Si se supera una determinada velocidad configurable, debe activar el corte de tracción y si se supera otra velocidad mayor debe activar el freno de emergencia.
-    \item Si se supera una determinada velocidad configurable, debe emitir una señal sonora intermitente a través de un buzzer.
-    \item Una vez aplicado, el corte de tracción debe dejar de aplicarse si la velocidad vuelve a ser menor a una velocidad configurable. 
-    \item Una vez aplicado, el freno de emergencia sólo debe dejar de aplicarse luego de un tiempo configurable desde que se superó el límite.
+    \item Si se supera una velocidad configurable (por defecto 30 km/h), debe activar el corte de tracción y emitir una señal sonora continua a través de un buzzer.
+    \item Si se supera una velocidad configurable (por defecto 36 km/h), debe activar el freno de emergencia.
+    \item Una vez aplicado, el corte de tracción debe dejar de aplicarse si la velocidad vuelve a ser menor a una velocidad configurable (por defecto 25 km/h). 
+    \item Una vez aplicado, el freno de emergencia sólo debe dejar de aplicarse luego de un tiempo configurable (por defecto 30 segundos) desde que se superó el límite.
     \item Si la lectura de velocidad es inválida, debe activar y desactivar el corte de tracción y freno de emergencia de manera alternada en ciclos de tiempo configurables.
+    \end{enumerate}
   \end{enumerate}
-  \end{enumerate}
+\newpage
 \item Grupo de requerimientos asociados con la interfaz humano-máquina
   \begin{enumerate}
   \item Debe contar con una llave rotativa precintable para activar el modo aislado limitado.
@@ -326,14 +328,16 @@ agrupándolos por afinidad:
     \item Debe informar al registrador de eventos si la alimentación es correcta.
     \item Debe informar al registrador de eventos la activación del freno de emergencia.
     \item Debe informar al registrador de eventos la activación del corte de tracción.
-    \item Debe informar periódicamente el estado del sistema a la central operativa a través de la red de datos GPRS.
+    \item Debe informar periódicamente el estado del sistema a la central operativa a través de la red de datos GPRS/3G/4G.
+    \item Debe existir la posibilidad de usar 2 proveedores distintos de datos de manera simultánea.
+    \item El protocolo de comunicación con la central operativa debe ser MQTT.
     \item Debe ser capaz de recibir un comando remoto que anule el corte de tracción y el freno de emergencia bajo cualquier condición (modo aislado total).
     \item Debe ser capaz de recibir un comando remoto que active el corte de tracción y el freno de emergencia bajo cualquier condición (modo parada total).
     \item Debe ser capaz de recibir un comando remoto que active el corte de tracción y anule el freno de emergencia bajo cualquier condición (modo coche en deriva).
     \item Debe ser capaz de recibir un comando remoto que active el corte de tracción y el freno de emergencia de forma intermitente en ciclos de tiempo configurables (modo intermitente).
     \item Debe ser capaz de recibir un comando remoto que cancele cualquier comando remoto vigente (exit). 
     \item Debe ser capaz de recibir comandos remotos que modifiquen sus parámetros internos configurables.
-    \item Si no recibe un nuevo comando remoto luego de un tiempo configurable, debe volver al algoritmo de activación de corte de tracción y freno de emergencia por defecto.
+    \item Si no recibe un nuevo comando remoto luego de un tiempo configurable (por defecto 10 segundos, máximo 1 minuto), debe volver al algoritmo de activación de corte de tracción y freno de emergencia por defecto.
     \item Ante un comando remoto recibido debe enviar una confirmación de recepción que permita a la central operativa decidir si es necesaria o no una retransmisión.
     \item Debe utilizar algún mecanismo de encriptación para el enlace con la central operativa.
   \end{enumerate}
@@ -343,7 +347,7 @@ agrupándolos por afinidad:
     \item Los conectores deben ser unívocos imposibilitando la conexión incorrecta.
     \item Debe poseer una única placa para el procesamiento principal.
     \item Debe estar diseñado para ser instalado en la locomotora sobre el pupitre.
-    \item El gabinete debe tener grado de seguridad IP66 o superior (protección contra polvo e inmersión completa en agua).
+    \item El gabinete debe tener grado de seguridad IP66 o superior.
   \end{enumerate}
 \end{enumerate}
 
