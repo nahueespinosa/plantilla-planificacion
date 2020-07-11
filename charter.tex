@@ -234,9 +234,10 @@ de diseño del trabajo original.
 \section{4. Requerimientos}
 \label{sec:requerimientos}
 
-Estos requerimientos fueron obtenidos a partir del documento ''R\_DCP\_10 Definición Conceptual del Proyecto - Fase 1''. El mismo
-fue creado originalmente por el Ing. Ivan Di Vito siguiendo la recomendación de la norma UNE-EN 50126 como resultado de múltiples 
-reuniones con las diferentes partes interesadas en la realización del proyecto. 
+Estos requerimientos fueron obtenidos a partir de los documentos ''R\_DCP\_10 Definición Conceptual del Proyecto - Fase 1'' 
+y ''R\_DRQ\_10 Distribución de los requisitos del sistema - Fase 5''. Los mismos fueron creados originalmente por el Ing. 
+Ivan Di Vito siguiendo la recomendación de la norma UNE-EN 50126 como resultado de múltiples reuniones con las diferentes 
+partes interesadas en la realización del proyecto. 
 
 Esas reuniones incluyeron la participación de personal de SOFSE de la Gerencia
 de Seguridad Operacional, del departamento de material rodante y de personal de los talleres de reparación y mantenimiento
@@ -246,10 +247,42 @@ Se estudió la documentación original teniendo en cuenta el estado actual del p
 agrupándolos por afinidad:
 
 \begin{enumerate}
+\item Grupo de requerimientos asociados con la interfaz humano-máquina
+  \begin{enumerate}
+    \item La interfaz debe contar con una llave rotativa precintable para activar el modo aislado limitado.
+    \item La interfaz debe indicar el modo actual del sistema (modo aislado o modo normal).
+    \item La interfaz debe mostrar la velocidad media del equipo en km/h (3 ó 4 dígitos).
+    \item La interfaz debe indicar el estado de las señales de corte de tracción y freno de emergencia.
+    \item La interfaz debe indicar la presencia de un comando remoto de la central operativa.
+    \item La interfaz debe indicar el estado de los módulos GPS.
+  \end{enumerate}
+\item Grupo de requisitos asociados a la comunicación con el registrador de eventos
+  \begin{enumerate}
+    \item El sistema debe informar al registrador de eventos la activación del modo aislado limitado.
+    \item El sistema debe informar al registrador de eventos si la alimentación es correcta.
+    \item El sistema debe informar al registrador de eventos la activación del freno de emergencia.
+    \item El sistema debe informar al registrador de eventos la activación del corte de tracción.
+  \end{enumerate}
+\item Grupo de requisitos asociados a la comunicación con la central operativa
+  \begin{enumerate}
+    \item El sistema debe informar periódicamente (con un tiempo configurable) su estado a la central operativa a través de la red de datos GPRS, 3G ó 4G.
+    \item El sistema debe utilizar la antena GPRS/GPS ya disponible en la formación.
+    \item Debe existir la posibilidad de usar 2 proveedores distintos de datos de manera simultánea.
+    \item El protocolo de comunicación con la central operativa debe ser MQTT.
+    \item El sistema debe ser capaz de recibir un comando remoto que anule el corte de tracción y el freno de emergencia bajo cualquier condición (modo aislado total).
+    \item El sistema debe ser capaz de recibir un comando remoto que active el corte de tracción y el freno de emergencia bajo cualquier condición (modo parada total).
+    \item El sistema debe ser capaz de recibir un comando remoto que active el corte de tracción y anule el freno de emergencia bajo cualquier condición (modo coche en deriva).
+    \item El sistema debe ser capaz de recibir un comando remoto que active el corte de tracción y el freno de emergencia de forma intermitente en ciclos de tiempo configurables (modo intermitente).
+    \item El sistema debe ser capaz de recibir un comando remoto que cancele cualquier comando remoto vigente (exit). 
+    \item El sistema debe ser capaz de recibir comandos remotos que modifiquen sus parámetros internos configurables.
+    \item Si no se recibe un nuevo comando remoto luego de un tiempo configurable (por defecto 10 segundos, máximo 1 minuto), debe volver al algoritmo de activación de corte de tracción y freno de emergencia por defecto.
+    \item Ante un comando remoto recibido, debe enviar una confirmación de recepción que permita a la central operativa decidir si es necesaria o no una retransmisión.
+    \item Debe utilizar algún mecanismo de encriptación para el enlace con la central operativa.
+  \end{enumerate}
 \item Grupo de requerimientos asociados al modo normal de funcionamiento
   \begin{enumerate}
-  \item No debe intervenir en el funcionamiento del material rodante (prioridad alta).
-  \item Debe obtener en todo momento la mejor estimación posible de la velocidad de la formación.
+  \item EL modo normal no debe intervenir en el funcionamiento del material rodante (prioridad alta).
+  \item El sistema debe obtener en todo momento la mejor estimación posible de la velocidad de la formación.
     \begin{enumerate}
     \item Debe ser capaz de recibir la velocidad a partir de una señal digital provista por el registrador de eventos Hasler Teloc 1500.
     \item Debe ser capaz de calcular la velocidad a partir de un generador de impulsos ópticos instalado en una o varias ruedas de la formación.
@@ -260,9 +293,9 @@ agrupándolos por afinidad:
   \end{enumerate}
 \item Grupo de requerimientos asociados al modo aislado limitado
   \begin{enumerate}
-  \item Debe evitar la aplicación del corte de tracción y/o freno de emergencia por parte de los subsistemas de seguridad del material rodante.
-  \item Debe emitir una señal sonora intermitente a través de un buzzer.
-  \item Debe evitar que la velocidad del material rodante supere una serie de límites configurados.
+  \item En modo aislado limitado el sistema debe evitar la aplicación del corte de tracción y/o freno de emergencia por parte de los subsistemas de seguridad del material rodante.
+  \item En modo aislado limitado el sistema debe emitir una señal sonora intermitente a través de un buzzer.
+  \item En modo aislado limitado el sistema debe evitar que la velocidad del material rodante supere una serie de límites configurados.
     \begin{enumerate}
     \item Si al pasar de modo normal a modo aislado limitado no se cuenta con una estimación de velocidad, debe activar el corte de tracción y el freno de emergencia por 30 segundos.
     \item Si se supera una velocidad configurable (por defecto 30 km/h), debe activar el corte de tracción y emitir una señal sonora continua a través de un buzzer.
@@ -272,38 +305,9 @@ agrupándolos por afinidad:
     \item Si la lectura de velocidad es inválida, debe activar y desactivar el corte de tracción y freno de emergencia de manera alternada en ciclos de tiempo configurables.
     \end{enumerate}
   \end{enumerate}
-\newpage
-\item Grupo de requerimientos asociados con la interfaz humano-máquina
-  \begin{enumerate}
-  \item Debe contar con una llave rotativa precintable para activar el modo aislado limitado.
-  \item Debe indicar el estado del sistema.
-  \item Debe mostrar la velocidad media del equipo en km/h (3 ó 4 dígitos).
-  \item Debe indicar el estado de las señales de corte de tracción y freno de emergencia.
-  \item Debe indicar la presencia de un comando remoto de la central operativa.
-  \item Debe indicar el estado de los módulos GPS.
-  \end{enumerate}
-\item Grupo de requerimientos asociados con las comunicaciones
-  \begin{enumerate}
-    \item Debe informar al registrador de eventos la activación del modo aislado limitado.
-    \item Debe informar al registrador de eventos si la alimentación es correcta.
-    \item Debe informar al registrador de eventos la activación del freno de emergencia.
-    \item Debe informar al registrador de eventos la activación del corte de tracción.
-    \item Debe informar periódicamente el estado del sistema a la central operativa a través de la red de datos GPRS/3G/4G.
-    \item Debe existir la posibilidad de usar 2 proveedores distintos de datos de manera simultánea.
-    \item El protocolo de comunicación con la central operativa debe ser MQTT.
-    \item Debe ser capaz de recibir un comando remoto que anule el corte de tracción y el freno de emergencia bajo cualquier condición (modo aislado total).
-    \item Debe ser capaz de recibir un comando remoto que active el corte de tracción y el freno de emergencia bajo cualquier condición (modo parada total).
-    \item Debe ser capaz de recibir un comando remoto que active el corte de tracción y anule el freno de emergencia bajo cualquier condición (modo coche en deriva).
-    \item Debe ser capaz de recibir un comando remoto que active el corte de tracción y el freno de emergencia de forma intermitente en ciclos de tiempo configurables (modo intermitente).
-    \item Debe ser capaz de recibir un comando remoto que cancele cualquier comando remoto vigente (exit). 
-    \item Debe ser capaz de recibir comandos remotos que modifiquen sus parámetros internos configurables.
-    \item Si no recibe un nuevo comando remoto luego de un tiempo configurable (por defecto 10 segundos, máximo 1 minuto), debe volver al algoritmo de activación de corte de tracción y freno de emergencia por defecto.
-    \item Ante un comando remoto recibido debe enviar una confirmación de recepción que permita a la central operativa decidir si es necesaria o no una retransmisión.
-    \item Debe utilizar algún mecanismo de encriptación para el enlace con la central operativa.
-  \end{enumerate}
 \item Grupo de requerimientos asociados al hardware y al gabinete
   \begin{enumerate}
-    \item La tensión nominal de alimentación debe estar comprendida entre 72 V y 120 V.
+    \item El sistema debe utilizar la alimentación presente en el material rodante compredida entre 72 V y 100 V.
     \item Los conectores deben ser unívocos imposibilitando la conexión incorrecta.
     \item Debe poseer una única placa para el procesamiento principal.
     \item Debe estar diseñado para ser instalado en la locomotora sobre el pupitre.
@@ -332,18 +336,17 @@ agrupándolos por afinidad:
   \begin{enumerate}
   \item Elaboración del plan de proyecto \hfill (20 hs)
   \end{enumerate}
-\item Investigación preliminar \hfill (total 70 hs)
+\item Investigación preliminar \hfill (total 90 hs)
   \begin{enumerate}
-  \item Estudio de la documentación original \hfill (20 hs)
+  \item Estudio de la documentación original \hfill (40 hs)
   \item Estudio de la arquitectura y el código fuente original \hfill (20 hs)
   \item Estudio de la normativa \hfill (30 hs)
   \end{enumerate}
-\item Desarrollo del firmware \hfill (total 300 hs)
+\item Desarrollo del firmware \hfill (total 290 hs)
   \begin{enumerate}
-  \item Análisis de casos de uso \hfill (10 hs)
-  \item Selección y configuración del entorno de desarrollo \hfill (10 hs)
-  \item Revisión y actualización de la arquitectura del firmware \hfill (20 hs)
   \item Identificación y desarrollo de aspectos de la normativa \hfill (20 hs)
+  \item Revisión y actualización de la arquitectura del firmware \hfill (20 hs)
+  \item Selección y configuración del entorno de desarrollo \hfill (10 hs)
   \item Selección de librerías externas \hfill (10 hs)
   \item Implementación de drivers y primitivas \hfill (20 hs)
   \item Implementación de módulo de interfaz hombre-máquina \hfill (30 hs)
@@ -374,7 +377,7 @@ agrupándolos por afinidad:
   \end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: (650 hs)
+Cantidad total de horas: (660 hs)
 
 \section{7. Diagrama de Activity On Node}
 \label{sec:AoN}
