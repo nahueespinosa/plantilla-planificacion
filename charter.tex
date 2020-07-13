@@ -175,18 +175,24 @@ versión, por un módulo ad-hoc de procesamiento.
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
 %\label{tab:interesados}
-\begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
+\begin{tabularx}{\linewidth}{@{}|l|l|X|X|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Cliente       & \clientename      &\empclientename	& \shortstack[l]{Gerente de Seguridad \\ Operacional} \\ \hline
+Cliente       & \clientename      &\empclientename	& \shortstack[l]{Gerente de Seguridad\\Operacional} \\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-\multirow{2}{*}{Colaboradores} & Dr. Ing. Ariel Lutenberg & CONICET-GICSAFe & \shortstack[l]{Director Grupo	de \\ Investigación} \\ \cline{2-4}
-& Ing. Sergio Dieleke & - & \shortstack[l]{Jefe de Laboratorio \\ Electrónico de \\ Material Rodante} \\ \hline
-\multirow{2}{*}{Orientadores} & \supname & \pertesupname & \shortstack[l]{Director Trabajo \\ Final} \\ \cline{2-4} 
-& \cosupname & \pertecosupname &\shortstack[l]{Codirector Trabajo \\ Final} \\ \hline
+\multirow{2}{*}{Colaboradores} & Dr. Ing. Ariel Lutenberg & CONICET-GICSAFe & \shortstack[l]{Director del Grupo\\de Investigación} \\ \cline{2-4}
+& Ing. Sergio Dieleke & SOFSE & \shortstack[l]{Coordinador del\\Laboratorio\\Electrónico\\ - Subgerencia de\\Material Rodante\\Línea Mitre} \\ \hline
+\multirow{2}{*}{Orientadores} & \supname & \pertesupname & \shortstack[l]{Director del\\Trabajo Final} \\ \cline{2-4} 
+& \cosupname & \pertecosupname &\shortstack[l]{Codirector del\\Trabajo Final} \\ \hline
 \end{tabularx}
 \end{table}
+
+
+SOFSE: Operadora Ferroviaria Sociedad del Estado, Trenes Argentinos Operaciones\\
+FIUBA: Facultad de Ingeniería, Universidad de Buenos Aires\\
+CONICET: Consejo Nacional de Investigaciones Científicas y técnicas\\
+GICSAFe: Grupo de Investigación en Calidad y Seguridad de las Aplicaciones Ferroviarias\\
 
 \newpage
 
@@ -283,7 +289,7 @@ agrupándolos por afinidad:
   \end{enumerate}
 \item Grupo de requerimientos asociados al modo normal de funcionamiento
   \begin{enumerate}
-  \item EL modo normal no debe intervenir en el funcionamiento del material rodante (prioridad alta).
+  \item El modo normal no debe intervenir en el funcionamiento del material rodante (prioridad alta).
   \item El sistema debe obtener en todo momento la mejor estimación posible de la velocidad de la formación.
     \begin{enumerate}
     \item Debe ser capaz de recibir la velocidad a partir de una señal digital provista por el registrador de eventos Hasler Teloc 1500.
