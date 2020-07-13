@@ -15,10 +15,10 @@
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
 \director{Dr. Ing. Pablo Gomez}
-\pertenenciaDirector{CONICET-GICSAFe} 
+\pertenenciaDirector{CONICET-GICSAFe, FIUBA} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
-\codirector{} % si queda vacio no se deberíá incluir 
-\pertenenciaCoDirector{}
+\codirector{Mg. Ing. Martín Menendez} % si queda vacio no se deberíá incluir 
+\pertenenciaCoDirector{CONICET-GICSAFe, FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
 \cliente{Ing. Alejandro Leonetti}
@@ -181,8 +181,10 @@ versión, por un módulo ad-hoc de procesamiento.
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
 Cliente       & \clientename      &\empclientename	& \shortstack[l]{Gerente de Seguridad \\ Operacional} \\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores & Dr. Ing. Ariel Lutenberg & CONICET-GICSAFe & \shortstack[l]{Director Grupo	de \\ Investigación} \\ \hline
-Orientador    & \supname	      & \pertesupname 	& Director	Trabajo final \\ \hline
+\multirow{2}{*}{Colaboradores} & Dr. Ing. Ariel Lutenberg & CONICET-GICSAFe & \shortstack[l]{Director Grupo	de \\ Investigación} \\ \cline{2-4}
+& Ing. Sergio Dieleke & - & \shortstack[l]{Jefe de Laboratorio \\ Electrónico de \\ Material Rodante} \\ \hline
+\multirow{2}{*}{Orientadores} & \supname & \pertesupname & \shortstack[l]{Director Trabajo \\ Final} \\ \cline{2-4} 
+& \cosupname & \pertecosupname &\shortstack[l]{Codirector Trabajo \\ Final} \\ \hline
 \end{tabularx}
 \end{table}
 

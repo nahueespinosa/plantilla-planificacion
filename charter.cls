@@ -159,7 +159,11 @@
 	
 	{\normalsize Director:\\}
 	{\Large \supname \hspace{1px} (\pertesupname) \\}
-	\vspace{2cm}
+  \vspace{1cm}
+  
+  {\normalsize Codirector:\\}
+	{\Large \cosupname \hspace{1px} (\pertecosupname) \\}
+  \vspace{2cm}
 		
 	{\normalsize Jurados:\\}	
 	{\Large \jurunoname \hspace{1px} (\perteunoame) \\
