@@ -83,7 +83,7 @@ Buenos Aires, \fechaInicioName
 Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} 
 se titulará ``\ttitle'', consistirá esencialmente en el prototipo de un equipo que permita inhabilitar las señales de 
 corte de tracción y frenado de emergencia en el caso de una falla en uno de los subsistemas de seguridad de una 
-formación ferroviaria, y tendrá un presupuesto preliminar estimado de 670 hs de trabajo y \$60.000, con 
+formación ferroviaria, y tendrá un presupuesto preliminar estimado de 640 hs de trabajo y \$60.000, con 
 fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
@@ -349,13 +349,13 @@ En esta sección se deben incluir las historias de usuarios y su ponderación (h
   \begin{enumerate}
   \item Elaboración del plan de proyecto \hfill (20 hs)
   \end{enumerate}
-\item Investigación preliminar \hfill (subtotal 60 hs)
+\item Investigación preliminar \hfill (subtotal 50 hs)
   \begin{enumerate}
   \item Estudio de la documentación original \hfill (20 hs)
   \item Estudio de la arquitectura y el código fuente original \hfill (20 hs)
-  \item Estudio de la normativa \hfill (20 hs)
+  \item Estudio de la normativa \hfill (10 hs)
   \end{enumerate}
-\item Desarrollo del software \hfill (subtotal 305 hs)
+\item Desarrollo del software \hfill (subtotal 285 hs)
   \begin{enumerate}
   \item Elaboración de la especificación de requisitos del software \hfill (20 hs)
   \item Elaboración de la especificación de arquitectura del software \hfill (30 hs)
@@ -368,7 +368,7 @@ En esta sección se deben incluir las historias de usuarios y su ponderación (h
   \item Implementación de módulo de medición de velocidad \hfill (40 hs)
   \item Implementación de módulo de comunicación y localización \hfill (40 hs)
   \item Implementación de módulo de lógica principal \hfill (40 hs)
-  \item Pruebas y verificación del software \hfill (40 hs)
+  \item Pruebas y verificación del software \hfill (20 hs)
   \item Elaboración de informe de verificación \hfill (5 hs)
   \end{enumerate}
 \item Desarrollo del hardware \hfill (subtotal 150 hs)
@@ -394,7 +394,7 @@ En esta sección se deben incluir las historias de usuarios y su ponderación (h
   \end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: (670 hs)
+Cantidad total de horas: (640 hs)
 
 \newpage
 
@@ -410,56 +410,104 @@ En la Figura \ref{fig:AoN} se muestra el diagrama \textit{Activity on Node} dond
 \label{fig:AoN}
 \end{figure}
 
-\newpage
-
 \section{8. Diagrama de Gantt}
 \label{sec:gantt}
 
-\begin{consigna}{red}
-Utilizar el software Gantter for Google Drive o alguno similar para dibujar el diagrama de Gantt.
-
-Existen muchos programas y recursos \textit{online} para hacer diagramas de gantt, entre las cuales destacamos:
-
-\begin{itemize}
-\item Planner
-\item GanttProject
-\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-\end{itemize}
-
-Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
-Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
-
-Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
-
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
+En las figuras \ref{fig:gantt1} y \ref{fig:gantt2} se muestra el diagrama de Gantt del proyecto.
 
 \begin{figure}[htbp]
 \begin{center}
-\begin{ganttchart}{1}{12}
-  \gantttitle{2020}{12} \\
-  \gantttitlelist{1,...,12}{1} \\
-  \ganttgroup{Group 1}{1}{7} \\
-  \ganttbar{Task 1}{1}{2} \\
-  \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
-  \ganttmilestone{Milestone o hito}{7} \ganttnewline
-  \ganttbar{Final Task}{8}{12}
-  \ganttlink{elem2}{elem3}
-  \ganttlink{elem3}{elem4}
+\begin{ganttchart}[
+    % hgrid,
+    % vgrid={*{6}{draw=none},dotted},   % Solamente dibujar la grilla por semana
+    inline,
+    x unit=0.7mm,                     % Tamaño de unidad (días)
+    time slot format=isodate,
+    bar label font=\small,
+    bar inline label anchor={east}, bar inline label node/.append style={right=2mm} % Etiquetas a la derecha
+  ]{2020-06-22}{2021-01-31}
+  \gantttitlecalendar{year, month} \\
+  \ganttgroup{Planificación}{2020-06-22}{2020-08-09} \\
+    \ganttbar{1.1 Elaboración del plan de proyecto}{2020-06-22}{2020-08-09} \\
+  \ganttgroup{Investigación}{2020-06-22}{2020-07-26} \\
+    \ganttbar{2.1 Estudio de la documentación original}{2020-06-22}{2020-07-05} \\
+    \ganttlinkedbar{2.2 Estudio de la arquitectura y el código fuente original}{2020-07-06}{2020-07-19} \\
+    \ganttlinkedbar{2.3 Estudio de la normativa}{2020-07-20}{2020-07-26} \\
+  \ganttgroup{Desarrollo del software}{2020-07-27}{2021-01-31} \\
+    \ganttbar{3.1 Especificación de requisitos del software}{2020-07-27}{2020-08-09} \\
+    \ganttlink{elem5}{elem7}
+    \ganttlinkedbar{3.2 Especificación de arquitectura del software}{2020-08-10}{2020-08-23} \\
+    \ganttlinkedbar{3.3 Elaboración del plan de verificación del software}{2020-08-24}{2020-08-30} \\
+    \ganttlinkedbar{3.4 Elaboración del plan de validación del software}{2020-08-31}{2020-09-06} \\
+    \ganttlinkedbar{3.5 Selección y configuración del entorno de desarrollo}{2020-09-07}{2020-09-13} \\
+    \ganttlinkedbar{3.6 Selección de librerías externas}{2020-09-14}{2020-09-20} \\
+    \ganttlinkedbar{3.7 Implementación de drivers y primitivas}{2020-09-21}{2020-10-04} \\
+    \ganttlinkedbar{3.8 Implementación de módulo de interfaz ...}{2020-10-05}{2020-10-18} \\  
+    \ganttlinkedbar[
+      bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
+    ]{3.9 Implementación de módulo de medición de ve...}{2020-10-19}{2020-11-15} \\
+    \ganttlinkedbar[
+      bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
+    ]{3.10 Implementación de módulo de comunicación y localización}{2020-11-16}{2020-12-20} \\
+    \ganttlinkedbar[
+      bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
+    ]{3.11 Implementación de módulo de lógica principal}{2020-12-21}{2021-01-17} \\
+    \ganttlinkedbar[
+      bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
+    ]{3.12 Pruebas y verificación del software}{2021-01-18}{2021-01-26} \\
+    \ganttlinkedbar[
+      bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
+    ]{3.13 Elaboración de informe de verificación}{2021-01-27}{2021-01-31}
 \end{ganttchart}
 \end{center}
-\caption{Diagrama de gantt de ejemplo}
-\label{fig:gantt}
+\caption{Diagrama de Gantt (Primera parte)}
+\label{fig:gantt1}
 \end{figure}
 
-\end{consigna}
+\newpage
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{ganttchart}[
+    % hgrid,
+    % vgrid={*{6}{draw=none},dotted},   % Solamente dibujar la grilla por semana
+    inline,
+    x unit=0.7mm,                     % Tamaño de unidad (días)
+    time slot format=isodate,
+    bar label font=\small,
+    bar inline label anchor={east}, bar inline label node/.append style={right=2mm} % Etiquetas a la derecha
+  ]{2021-02-01}{2021-09-12}
+  \gantttitlecalendar{year, month} \\
+  \ganttgroup{Desarrollo del harware}{2021-02-01}{2021-04-04} \\
+    \ganttbar{4.1 Revisión y actualización de la arquitectura del hardware}{2021-02-01}{2021-02-14} \\
+    \ganttlinkedbar{4.2 Selección de módulos y componentes}{2021-02-15}{2021-02-21} \\
+    \ganttlinkedbar{4.3 Diseño del circuito impreso}{2021-02-22}{2021-03-21} \\
+    \ganttlinkedbar{4.4 Pruebas y verificación del hardware}{2021-03-22}{2021-04-04} \\
+  \ganttgroup{Integración del sistema}{2021-04-05}{2021-05-23} \\
+    \ganttbar{5.1 Integración de módulos constitutivos}{2021-04-05}{2021-04-25} \\
+    \ganttlink{elem4}{elem6}
+    \ganttlinkedbar{5.2 Pruebas de integración y verificación del sistema}{2021-04-26}{2021-05-09} \\
+    \ganttlinkedbar{5.3 Pruebas de campo y validación del sistema}{2021-05-10}{2021-05-16} \\
+    \ganttlinkedbar{5.4 Elaboración de informe de validación}{2021-05-17}{2021-05-23} \\
+  \ganttgroup{Procesos de finalización}{2021-05-24}{2021-07-04} \\
+    \ganttbar{6.1 Elaboración del informe de avance}{2021-05-24}{2021-05-30} \\
+    \ganttlink{elem9}{elem11}
+    \ganttlinkedbar[
+      bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
+    ]{6.2 Elaboración de la memoria del proyecto}{2021-05-31}{2021-06-27} \\
+    \ganttlinkedbar[
+      bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
+    ]{6.3 Preparación de la presentación final}{2021-06-28}{2021-07-04}
+\end{ganttchart}
+\end{center}
+\caption{Diagrama de Gantt (Segunda parte)}
+\label{fig:gantt2}
+\end{figure}
+
+\newpage
 
 \section{9. Matriz de uso de recursos de materiales}
 \label{sec:recursos}
-
 
 \begin{table}[htpb]
 \label{tab:recursos}
