@@ -121,7 +121,7 @@ ocasionar daños afectando negativamente la salud de las personas, al medio ambi
 materiales.
 
 En el año 2019 se concluyó el desarrollo de un prototipo funcional del SAL/T  en el marco del trabajo de tesis del Ing. 
-Ivan Di Vito. En la Figura \ref{fig:diagrama_de_bloques} se puede ver cómo interactúa con las señales CT y FE. En modo 
+Ivan Di Vito. En la figura \ref{fig:diagrama_de_bloques} se puede ver cómo interactúa con las señales CT y FE. En modo 
 de funcionamiento normal los subsistemas de seguridad tienen conexión directa con el control central. Ante la activación 
 por parte del conductor del modo aislado limitado (AL) el SAL/T toma el control de dichas señales.
 
@@ -136,7 +136,7 @@ El SAL/T monitorea la velocidad de la formación e informa su estado interno al 
 A su vez, se comunica con una central operativa de la cual puede recibir comandos remotos que modifiquen su comportamiento
 a través de un enlace redundado.
 
-En la Figura \ref{fig:ciclo_de_vida_50126} se resaltan las cinco primeras fases completadas del ciclo de vida propuesto 
+En la figura \ref{fig:ciclo_de_vida_50126} se resaltan las cinco primeras fases completadas del ciclo de vida propuesto 
 por la norma UNE-EN 50126 para aplicaciones ferroviarias. La documentación de la sexta fase, que corresponde al diseño 
 e implementación del sistema, y las fases posteriores quedaron fuera del alcance del trabajo original.
 
@@ -401,7 +401,7 @@ Cantidad total de horas: (640 hs)
 \section{7. Diagrama de Activity On Node}
 \label{sec:AoN}
 
-En la Figura \ref{fig:AoN} se muestra el diagrama \textit{Activity on Node} donde se identifica el camino crítico del proyecto.
+En la figura \ref{fig:AoN} se muestra el diagrama \textit{Activity on Node} donde se identifica el camino crítico del proyecto.
 
 \begin{figure}[htpb]
 \centering 
@@ -410,10 +410,53 @@ En la Figura \ref{fig:AoN} se muestra el diagrama \textit{Activity on Node} dond
 \label{fig:AoN}
 \end{figure}
 
+\newpage
+
 \section{8. Diagrama de Gantt}
 \label{sec:gantt}
 
-En las figuras \ref{fig:gantt1} y \ref{fig:gantt2} se muestra el diagrama de Gantt del proyecto.
+Se elaboró el diagrama considerando que se trabajará entre 10 y 15 horas por semana, ajustando el tiempo
+donde fuera necesario para cumplir con la fecha de finalización del proyecto. En el cuadro \ref{table:gantt} se pueden ver las fechas de
+inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig:gantt2} se muestra el diagrama de Gantt resultante.
+
+\begin{table}[htpb]
+  \centering
+  \begin{tabularx}{\linewidth}{@{}|c|X|c|c|@{}}
+  \hline
+  \rowcolor[HTML]{C0C0C0} 
+  WBS & Nombre de la tarea & Inicio & Fin \\ \hline
+  1.1 & Elaboración del plan de proyecto & 2020-06-22 & 2020-08-09 \\ \hline
+  2.1 & Estudio de la documentación original & 2020-06-22 & 2020-07-05 \\ \hline
+  2.2 & Estudio de la arquitectura y el código fuente original & 2020-07-06 & 2020-07-19 \\ \hline
+  2.3 & Estudio de la normativa & 2020-07-20 & 2020-07-26 \\ \hline
+  3.1 & Especificación de requisitos del software & 2020-07-27 & 2020-08-09 \\ \hline
+  3.2 & Especificación de arquitectura del software & 2020-08-10 & 2020-08-23 \\ \hline
+  3.3 & Elaboración del plan de verificación del software & 2020-08-24 & 2020-08-30 \\ \hline
+  3.4 & Elaboración del plan de validación del software & 2020-08-31 & 2020-09-06 \\ \hline
+  3.5 & Selección y configuración del entorno de desarrollo & 2020-09-07 & 2020-09-13 \\ \hline
+  3.6 & Selección de librerías externas & 2020-09-14 & 2020-09-20 \\ \hline
+  3.7 & Implementación de drivers y primitivas & 2020-09-21 & 2020-10-04 \\ \hline
+  3.8 & Implementación de módulo de interfaz humano-máquina & 2020-10-05 & 2020-10-18 \\ \hline
+  3.9 & Implementación de módulo de medición de velocidad & 2020-10-19 & 2020-11-15 \\ \hline
+  3.10 & Implementación de módulo de comunicación y localización & 2020-11-16 & 2020-12-20 \\ \hline
+  3.11 & Implementación de módulo de lógica principal & 2020-12-21 & 2021-01-17 \\ \hline
+  3.12 & Pruebas y verificación del software & 2021-01-18 & 2021-01-26 \\ \hline
+  3.13 & Elaboración de informe de verificación & 2021-01-27 & 2021-01-31 \\ \hline
+  4.1 & Revisión y actualización de la arquitectura del hardware & 2021-02-01 & 2021-02-14 \\ \hline
+  4.2 & Selección de módulos y componentes & 2021-02-15 & 2021-02-21 \\ \hline
+  4.3 & Diseño del circuito impreso & 2021-02-22 & 2021-03-14 \\ \hline
+  4.4 & Pruebas y verificación del hardware & 2021-03-15 & 2021-03-28 \\ \hline
+  5.1 & Integración de módulos constitutivos & 2021-03-29 & 2021-04-11 \\ \hline
+  5.2 & Pruebas de integración y verificación del sistema & 2021-04-12 & 2021-04-25 \\ \hline
+  5.3 & Pruebas de campo y validación del sistema & 2021-04-26 & 2021-05-02 \\ \hline
+  5.4 & Elaboración de informe de validación & 2021-05-03 & 2021-05-09 \\ \hline
+  6.1 & Elaboración del informe de avance & 2021-05-09 & 2021-05-15 \\ \hline
+  6.2 & Elaboración de la memoria del proyecto & 2021-05-16 & 2021-06-13 \\ \hline
+  6.3 & Preparación de la presentación final & 2021-06-14 & 2021-06-21 \\ \hline
+  \end{tabularx}
+  \caption{Tabla de tareas con fecha de inicio y fin}
+  \label{table:gantt}
+\end{table}
 
 \begin{figure}[htbp]
 \begin{center}
@@ -482,7 +525,7 @@ En las figuras \ref{fig:gantt1} y \ref{fig:gantt2} se muestra el diagrama de Gan
     bar inline label anchor={east}, bar inline label node/.append style={right=2mm} % Etiquetas a la derecha
   ]{2021-02-01}{2021-09-12}
   \gantttitlecalendar{year, month} \\
-  \ganttgroup{Desarrollo del harware}{2021-02-01}{2021-03-28} \\
+  \ganttgroup{Desarrollo del hardware}{2021-02-01}{2021-03-28} \\
     \ganttbar{4.1 Revisión y actualización de la arquitectura del hardware}{2021-02-01}{2021-02-14} \\
     \ganttlinkedbar{4.2 Selección de módulos y componentes}{2021-02-15}{2021-02-21} \\
     \ganttlinkedbar{4.3 Diseño del circuito impreso}{2021-02-22}{2021-03-14} \\
@@ -599,6 +642,7 @@ Descripción &
 \end{tabularx}%
 \end{table}
 
+\newpage
 
 \section{11. Matriz de asignación de responsabilidades}
 \label{sec:responsabilidades}
