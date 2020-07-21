@@ -33,8 +33,8 @@
 \pertenenciaJurTres{pertenencia (3)}
  
 \fechaINICIO{22 de junio de 2020}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlanificacion{22 de Agosto de 2020} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{22 de diciembre de 2020}		%Fecha de defensa pública del trabajo final
+\fechaFINALPlanificacion{22 de agosto de 2020} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{21 de junio de 2021}		%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -424,6 +424,7 @@ En las figuras \ref{fig:gantt1} y \ref{fig:gantt2} se muestra el diagrama de Gan
     x unit=0.7mm,                     % Tamaño de unidad (días)
     time slot format=isodate,
     link bulge=3,                     % Longitud de la vuelta de las flechas
+    milestone right shift=5,          % Ancho de los hitos
     bar label font=\small,
     bar inline label anchor={east}, bar inline label node/.append style={right=2mm} % Etiquetas a la derecha
   ]{2020-06-22}{2021-01-31}
@@ -476,30 +477,32 @@ En las figuras \ref{fig:gantt1} y \ref{fig:gantt2} se muestra el diagrama de Gan
     x unit=0.7mm,                     % Tamaño de unidad (días)
     time slot format=isodate,
     link bulge=3,                     % Longitud de la vuelta de las flechas
+    milestone right shift=5,          % Ancho de los hitos
     bar label font=\small,
     bar inline label anchor={east}, bar inline label node/.append style={right=2mm} % Etiquetas a la derecha
   ]{2021-02-01}{2021-09-12}
   \gantttitlecalendar{year, month} \\
-  \ganttgroup{Desarrollo del harware}{2021-02-01}{2021-04-04} \\
+  \ganttgroup{Desarrollo del harware}{2021-02-01}{2021-03-28} \\
     \ganttbar{4.1 Revisión y actualización de la arquitectura del hardware}{2021-02-01}{2021-02-14} \\
     \ganttlinkedbar{4.2 Selección de módulos y componentes}{2021-02-15}{2021-02-21} \\
-    \ganttlinkedbar{4.3 Diseño del circuito impreso}{2021-02-22}{2021-03-21} \\
-    \ganttlinkedbar{4.4 Pruebas y verificación del hardware}{2021-03-22}{2021-04-04} \\
-  \ganttgroup{Integración del sistema}{2021-04-05}{2021-05-23} \\
-    \ganttbar{5.1 Integración de módulos constitutivos}{2021-04-05}{2021-04-25} \\
+    \ganttlinkedbar{4.3 Diseño del circuito impreso}{2021-02-22}{2021-03-14} \\
+    \ganttlinkedbar{4.4 Pruebas y verificación del hardware}{2021-03-15}{2021-03-28} \\
+  \ganttgroup{Integración del sistema}{2021-03-29}{2021-05-09} \\
+    \ganttbar{5.1 Integración de módulos constitutivos}{2021-03-29}{2021-04-11} \\
     \ganttlink{elem4}{elem6}
-    \ganttlinkedbar{5.2 Pruebas de integración y verificación del sistema}{2021-04-26}{2021-05-09} \\
-    \ganttlinkedbar{5.3 Pruebas de campo y validación del sistema}{2021-05-10}{2021-05-16} \\
-    \ganttlinkedbar{5.4 Elaboración de informe de validación}{2021-05-17}{2021-05-23} \\
-  \ganttgroup{Procesos de finalización}{2021-05-24}{2021-07-04} \\
-    \ganttbar{6.1 Elaboración del informe de avance}{2021-05-24}{2021-05-30} \\
+    \ganttlinkedbar{5.2 Pruebas de integración y verificación del sistema}{2021-04-12}{2021-04-25} \\
+    \ganttlinkedbar{5.3 Pruebas de campo y validación del sistema}{2021-04-26}{2021-05-02} \\
+    \ganttlinkedbar{5.4 Elaboración de informe de validación}{2021-05-03}{2021-05-09} \\
+  \ganttgroup{Procesos de finalización}{2021-05-09}{2021-06-21} \\
+    \ganttbar{6.1 Elaboración del informe de avance}{2021-05-09}{2021-05-15} \\
     \ganttlink{elem9}{elem11}
     \ganttlinkedbar[
       bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
-    ]{6.2 Elaboración de la memoria del proyecto}{2021-05-31}{2021-06-27} \\
+    ]{6.2 Elaboración de la memoria del proyecto}{2021-05-16}{2021-06-13} \\
     \ganttlinkedbar[
       bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
-    ]{6.3 Preparación de la presentación final}{2021-06-28}{2021-07-04}
+    ]{6.3 Preparación de la presentación final}{2021-06-14}{2021-06-21} \\
+    \ganttlinkedmilestone{Presentación pública}{2021-06-21}
 \end{ganttchart}
 \end{center}
 \caption{Diagrama de Gantt (Segunda parte)}
