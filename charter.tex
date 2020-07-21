@@ -83,7 +83,7 @@ Buenos Aires, \fechaInicioName
 Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} 
 se titulará ``\ttitle'', consistirá esencialmente en el prototipo de un equipo que permita inhabilitar las señales de 
 corte de tracción y frenado de emergencia en el caso de una falla en uno de los subsistemas de seguridad de una 
-formación ferroviaria, y tendrá un presupuesto preliminar estimado de 640 hs de trabajo y \$60.000, con 
+formación ferroviaria, y tendrá un presupuesto preliminar estimado de 630 hs de trabajo y \$60.000, con 
 fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
@@ -371,17 +371,18 @@ En esta sección se deben incluir las historias de usuarios y su ponderación (h
   \item Pruebas y verificación del software \hfill (20 hs)
   \item Elaboración de informe de verificación \hfill (5 hs)
   \end{enumerate}
-\item Desarrollo del hardware \hfill (subtotal 150 hs)
+\item Desarrollo del hardware \hfill (subtotal 170 hs)
   \begin{enumerate}
   \item Revisión y actualización de la arquitectura del hardware \hfill (20 hs)
   \item Selección de módulos y componentes \hfill (10 hs)
   \item Actualización de los diagramas esquemáticos \hfill (20 hs)
   \item Diseño del circuito impreso \hfill (60 hs)
+  \item Fabricación del circuito impreso \hfill (20 hs)
   \item Pruebas y verificación del hardware \hfill (40 hs)
   \end{enumerate}
-\item Integración del sistema \hfill (subtotal 75 hs)
+\item Integración del sistema \hfill (subtotal 45 hs)
   \begin{enumerate}
-  \item Integración de módulos constitutivos \hfill (40 hs)
+  \item Integración de módulos constitutivos \hfill (10 hs)
   \item Pruebas de integración y verificación del sistema \hfill (20 hs)
   \item Pruebas de campo y validación del sistema \hfill (10 hs)
   \item Elaboración de informe de validación \hfill (5 hs)
@@ -394,7 +395,7 @@ En esta sección se deben incluir las historias de usuarios y su ponderación (h
   \end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: (640 hs)
+Cantidad total de horas: (630 hs)
 
 \newpage
 
@@ -442,17 +443,19 @@ inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig
   3.11 & Implementación de módulo de lógica principal & 2020-12-21 & 2021-01-17 \\ \hline
   3.12 & Pruebas y verificación del software & 2021-01-18 & 2021-01-26 \\ \hline
   3.13 & Elaboración de informe de verificación & 2021-01-27 & 2021-01-31 \\ \hline
-  4.1 & Revisión y actualización de la arquitectura del hardware & 2021-02-01 & 2021-02-14 \\ \hline
-  4.2 & Selección de módulos y componentes & 2021-02-15 & 2021-02-21 \\ \hline
-  4.3 & Diseño del circuito impreso & 2021-02-22 & 2021-03-14 \\ \hline
-  4.4 & Pruebas y verificación del hardware & 2021-03-15 & 2021-03-28 \\ \hline
-  5.1 & Integración de módulos constitutivos & 2021-03-29 & 2021-04-11 \\ \hline
+  4.1 & Revisión y actualización de la arquitectura del hardware & 2021-02-01 & 2021-02-07 \\ \hline
+  4.2 & Selección de módulos y componentes & 2021-02-08 & 2021-02-14 \\ \hline
+  4.3 & Actualización de los diagramas esquemáticos & 2021-02-15 & 2021-02-21 \\  \hline
+  4.4 & Diseño del circuito impreso & 2021-02-22 & 2021-03-14 \\ \hline
+  4.5 & Fabricación del circuito impreso & 2021-03-15 & 2021-03-20 \\ \hline
+  4.6 & Pruebas y verificación del hardware & 2021-03-21 & 2021-04-04 \\ \hline
+  5.1 & Integración de módulos constitutivos & 2021-04-05 & 2021-04-11 \\ \hline
   5.2 & Pruebas de integración y verificación del sistema & 2021-04-12 & 2021-04-25 \\ \hline
   5.3 & Pruebas de campo y validación del sistema & 2021-04-26 & 2021-05-02 \\ \hline
   5.4 & Elaboración de informe de validación & 2021-05-03 & 2021-05-09 \\ \hline
-  6.1 & Elaboración del informe de avance & 2021-05-09 & 2021-05-15 \\ \hline
-  6.2 & Elaboración de la memoria del proyecto & 2021-05-16 & 2021-06-13 \\ \hline
-  6.3 & Preparación de la presentación final & 2021-06-14 & 2021-06-21 \\ \hline
+  6.1 & Elaboración del informe de avance & 2021-05-10 & 2021-05-16 \\ \hline
+  6.2 & Elaboración de la memoria del proyecto & 2021-05-17 & 2021-06-13 \\ \hline
+  6.3 & Preparación de la presentación final & 2021-06-14 & 2021-06-20 \\ \hline
   \end{tabularx}
   \caption{Tabla de tareas con fecha de inicio y fin}
   \label{table:gantt}
@@ -509,8 +512,6 @@ inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig
 \label{fig:gantt1}
 \end{figure}
 
-\newpage
-
 \begin{figure}[htbp]
 \begin{center}
 \begin{ganttchart}[
@@ -525,26 +526,28 @@ inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig
     bar inline label anchor={east}, bar inline label node/.append style={right=2mm} % Etiquetas a la derecha
   ]{2021-02-01}{2021-09-12}
   \gantttitlecalendar{year, month} \\
-  \ganttgroup{Desarrollo del hardware}{2021-02-01}{2021-03-28} \\
-    \ganttbar{4.1 Revisión y actualización de la arquitectura del hardware}{2021-02-01}{2021-02-14} \\
-    \ganttlinkedbar{4.2 Selección de módulos y componentes}{2021-02-15}{2021-02-21} \\
-    \ganttlinkedbar{4.3 Diseño del circuito impreso}{2021-02-22}{2021-03-14} \\
-    \ganttlinkedbar{4.4 Pruebas y verificación del hardware}{2021-03-15}{2021-03-28} \\
-  \ganttgroup{Integración del sistema}{2021-03-29}{2021-05-09} \\
-    \ganttbar{5.1 Integración de módulos constitutivos}{2021-03-29}{2021-04-11} \\
-    \ganttlink{elem4}{elem6}
+  \ganttgroup{Desarrollo del hardware}{2021-02-01}{2021-04-04} \\
+    \ganttbar{4.1 Revisión y actualización de la arquitectura del hardware}{2021-02-01}{2021-02-07} \\
+    \ganttlinkedbar{4.2 Selección de módulos y componentes}{2021-02-08}{2021-02-14} \\
+    \ganttlinkedbar{4.3 Actualización de los diagramas esquemáticos}{2021-02-15}{2021-02-21} \\
+    \ganttlinkedbar{4.4 Diseño del circuito impreso}{2021-02-22}{2021-03-14} \\
+    \ganttlinkedbar{4.5 Fabricación del circuito impreso}{2021-03-14}{2021-03-20} \\
+    \ganttlinkedbar{4.6 Pruebas y verificación del hardware}{2021-03-21}{2021-04-04} \\
+  \ganttgroup{Integración del sistema}{2021-04-05}{2021-05-09} \\
+    \ganttbar{5.1 Integración de módulos constitutivos}{2021-04-05}{2021-04-11} \\
+    \ganttlink{elem6}{elem8}
     \ganttlinkedbar{5.2 Pruebas de integración y verificación del sistema}{2021-04-12}{2021-04-25} \\
     \ganttlinkedbar{5.3 Pruebas de campo y validación del sistema}{2021-04-26}{2021-05-02} \\
     \ganttlinkedbar{5.4 Elaboración de informe de validación}{2021-05-03}{2021-05-09} \\
-  \ganttgroup{Procesos de finalización}{2021-05-09}{2021-06-21} \\
-    \ganttbar{6.1 Elaboración del informe de avance}{2021-05-09}{2021-05-15} \\
-    \ganttlink{elem9}{elem11}
+  \ganttgroup{Procesos de finalización}{2021-05-10}{2021-06-20} \\
+    \ganttbar{6.1 Elaboración del informe de avance}{2021-05-10}{2021-05-16} \\
+    \ganttlink{elem11}{elem13}
     \ganttlinkedbar[
       bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
-    ]{6.2 Elaboración de la memoria del proyecto}{2021-05-16}{2021-06-13} \\
+    ]{6.2 Elaboración de la memoria del proyecto}{2021-05-17}{2021-06-13} \\
     \ganttlinkedbar[
       bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
-    ]{6.3 Preparación de la presentación final}{2021-06-14}{2021-06-21} \\
+    ]{6.3 Preparación de la presentación final}{2021-06-14}{2021-06-20} \\
     \ganttlinkedmilestone{Presentación pública}{2021-06-21}
 \end{ganttchart}
 \end{center}
@@ -557,20 +560,7 @@ inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig
 \section{9. Matriz de uso de recursos de materiales}
 \label{sec:recursos}
 
-\begin{table}[htpb]
-\label{tab:recursos}
-\centering
-\begin{tabularx}{\linewidth}{@{}|c|X|X|X|X|X|@{}}
-\hline
-\cellcolor[HTML]{C0C0C0} & \cellcolor[HTML]{C0C0C0} & \multicolumn{4}{c|}{\cellcolor[HTML]{C0C0C0}Recursos requeridos (horas)} \\ \cline{3-6} 
-\multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} & \multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Nombre \\ tarea\end{tabular}} & Material 1 & Material 2 & Material 3 & Material 4 \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
-\end{tabularx}%
-\end{table}
-
+\newpage
 
 \section{10. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
