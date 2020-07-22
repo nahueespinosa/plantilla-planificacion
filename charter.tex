@@ -417,7 +417,7 @@ En la figura \ref{fig:AoN} se muestra el diagrama \textit{Activity on Node} dond
 \label{sec:gantt}
 
 Se elaboró el diagrama considerando que se trabajará entre 10 y 15 horas por semana, ajustando el tiempo
-donde fuera necesario para cumplir con la fecha de finalización del proyecto. En el cuadro \ref{table:gantt} se pueden ver las fechas de
+donde fuera necesario para cumplir con la fecha de finalización del proyecto. En el cuadro \ref{tab:gantt} se pueden ver las fechas de
 inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig:gantt2} se muestra el diagrama de Gantt resultante.
 
 \begin{table}[htpb]
@@ -457,8 +457,8 @@ inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig
   6.2 & Elaboración de la memoria del proyecto & 2021-05-17 & 2021-06-13 \\ \hline
   6.3 & Preparación de la presentación final & 2021-06-14 & 2021-06-20 \\ \hline
   \end{tabularx}
-  \caption{Tabla de tareas con fecha de inicio y fin}
-  \label{table:gantt}
+  \caption{Tabla de tareas con fecha de inicio y finalización}
+  \label{tab:gantt}
 \end{table}
 
 \begin{figure}[htbp]
@@ -471,7 +471,7 @@ inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig
     time slot format=isodate,
     link bulge=3,                     % Longitud de la vuelta de las flechas
     milestone right shift=5,          % Ancho de los hitos
-    bar label font=\small,
+    bar label font=\small,            % Tamaño de letra de etiquetas en barras
     bar inline label anchor={east}, bar inline label node/.append style={right=2mm} % Etiquetas a la derecha
   ]{2020-06-22}{2021-01-31}
   \gantttitlecalendar{year, month} \\
@@ -522,7 +522,7 @@ inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig
     time slot format=isodate,
     link bulge=3,                     % Longitud de la vuelta de las flechas
     milestone right shift=5,          % Ancho de los hitos
-    bar label font=\small,
+    bar label font=\small,            % Tamaño de letra de etiquetas en barras
     bar inline label anchor={east}, bar inline label node/.append style={right=2mm} % Etiquetas a la derecha
   ]{2021-02-01}{2021-09-12}
   \gantttitlecalendar{year, month} \\
@@ -559,6 +559,47 @@ inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig
 
 \section{9. Matriz de uso de recursos de materiales}
 \label{sec:recursos}
+
+\begin{table}[!htpb]
+\begin{center}
+  \begin{tabularx}{\linewidth}{@{}|c|X|m{0.8cm}|m{1.4cm}|m{1.3cm}|m{1.1cm}|@{}}
+  \hline
+  \cellcolor[HTML]{C0C0C0} & \cellcolor[HTML]{C0C0C0} & \multicolumn{4}{c|}{\cellcolor[HTML]{C0C0C0}Recursos requeridos (horas)} \\ \cline{3-6} 
+  \multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}WBS} & \multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Nombre de la tarea\end{tabular}} & PC & Prototipo original del SAL/T & Circuito impreso y componentes & Instru- mental \\ \hline
+  1.1 & Elaboración del plan de proyecto & 20 & & & \\ \hline
+  2.1 & Estudio de la documentación original & 20 & & & \\ \hline
+  2.2 & Estudio de la arquitectura y el código fuente original & 20 & 10 & & 10 \\ \hline
+  2.3 & Estudio de la normativa & 10 & & & \\ \hline
+  3.1 & Elaboración de la especificación de requisitos del software & 20 & & & \\ \hline
+  3.2 & Elaboración de la especificación de arquitectura del software & 30 & & & \\ \hline
+  3.3 & Elaboración del plan de verificación del software & 10 & & & \\ \hline
+  3.4 & Elaboración del plan de validación del software & 10 & & & \\ \hline
+  3.5 & Selección y configuración del entorno de desarrollo & 10 & & & \\ \hline
+  3.6 & Selección de librerías externas & 10 & & & \\ \hline
+  3.7 & Implementación de drivers y primitivas & 20 & 20 & & \\ \hline
+  3.8 & Implementación de módulo de interfaz humano-máquina & 30 & 30 & & \\ \hline
+  3.9 & Implementación de módulo de medición de velocidad & 40 & 40 & & \\ \hline
+  3.10 & Implementación de módulo de comunicación y localización & 40 & 40 & & \\ \hline
+  3.11 & Implementación de módulo de lógica principal & 40 & 40 & & \\ \hline
+  3.12 & Pruebas y verificación del software & 20 & 20 & & 20 \\ \hline
+  3.13 & Elaboración de informe de verificación & 5 & & & \\ \hline
+  4.1 & Revisión y actualización de la arquitectura del hardware & 20 & & & \\ \hline
+  4.2 & Selección de módulos y componentes & 10 & & & \\ \hline
+  4.3 & Actualización de los diagramas esquemáticos & 20 & & & \\  \hline
+  4.4 & Diseño del circuito impreso & 60 & & & \\ \hline
+  4.5 & Fabricación de circuito impreso & 20 & & 20 & \\  \hline
+  4.6 & Pruebas y verificación del hardware & 40 & 40 & & 40 \\ \hline
+  5.1 & Integración de módulos constitutivos & 10 & 10 & & \\ \hline
+  5.2 & Pruebas de integración y verificación del sistema & 20 & 20 & & 20 \\ \hline
+  5.3 & Pruebas de campo y validación del sistema & 10 & 10 & & \\ \hline
+  5.4 & Elaboración de informe de validación & 5 & & & \\ \hline
+  6.1 & Elaboración del informe de avance & 10 & & & \\ \hline
+  6.2 & Elaboración de la memoria del proyecto & 40 & & & \\ \hline
+  6.3 & Preparación de la presentación final & 10 & & & \\ \hline
+  \end{tabularx}
+\end{center}
+\label{tab:recursos}
+\end{table}
 
 \newpage
 
