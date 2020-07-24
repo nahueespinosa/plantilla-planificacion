@@ -417,7 +417,7 @@ En la figura \ref{fig:AoN} se muestra el diagrama \textit{Activity on Node} dond
 \label{sec:gantt}
 
 Se elaboró el diagrama considerando que se trabajará entre 10 y 15 horas por semana, ajustando el tiempo
-donde fuera necesario para cumplir con la fecha de finalización del proyecto. En el cuadro \ref{tab:gantt} se pueden ver las fechas de
+donde fuera necesario para cumplir con la fecha de finalización del proyecto. En la tabla siguiente se pueden ver las fechas de
 inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig:gantt2} se muestra el diagrama de Gantt resultante.
 
 \begin{table}[htpb]
@@ -457,7 +457,6 @@ inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig
   6.2 & Elaboración de la memoria del proyecto & 2021-05-17 & 2021-06-13 \\ \hline
   6.3 & Preparación de la presentación final & 2021-06-14 & 2021-06-20 \\ \hline
   \end{tabularx}
-  \caption{Tabla de tareas con fecha de inicio y finalización}
   \label{tab:gantt}
 \end{table}
 
@@ -606,6 +605,9 @@ inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig
 \section{10. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
+A continuación se presentan los costos del proyecto, directos e indirectos en su 
+tabla correspondiente.
+
 \begin{table}[htpb]
 \centering
 \begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
@@ -628,78 +630,18 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-30\% del costo directo & N/A & U\$D 3.930 & U\$D 3.930 \\ \hline
-\multicolumn{3}{|c|}{SUBTOTAL} & \multicolumn{1}{c|}{U\$D 3.930} \\ \hline
+20\% del costo directo & N/A & U\$D 2.620 & U\$D 2.620 \\ \hline
+\multicolumn{3}{|c|}{SUBTOTAL} & \multicolumn{1}{c|}{U\$D 2.620} \\ \hline
 \rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} & \multicolumn{1}{c|}{U\$D 17.030} \\ \hline
+\multicolumn{3}{|c|}{TOTAL} & \multicolumn{1}{c|}{U\$D 15.720} \\ \hline
 \end{tabularx}%
 \end{table}
-
-\newpage
 
 \section{11. Matriz de asignación de responsabilidades}
 \label{sec:responsabilidades}
 
 En esta sección se presenta la tabla de asignación de responsabilidades.
 
-\begin{table}[htpb]
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-\rowcolor[HTML]{C0C0C0} 
-\cellcolor[HTML]{C0C0C0} &
-  \cellcolor[HTML]{C0C0C0} &
-  \multicolumn{4}{c|}{\cellcolor[HTML]{C0C0C0}Listar todos los nombres y roles del proyecto} \\ \cline{3-6} 
-\rowcolor[HTML]{C0C0C0} 
-\cellcolor[HTML]{C0C0C0} &
-  \cellcolor[HTML]{C0C0C0} &
-  Responsable &
-  Orientador &
-  Equipo &
-  Cliente \\ \cline{3-6} 
-\rowcolor[HTML]{C0C0C0} 
-\multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} &
-  \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}Nombre de la tarea} &
-  \authorname &
-  \supname &
-  Nombre de alguien &
-  \clientename \\ \hline
-  1.1 & Elaboración del plan de proyecto & P & A & & I \\ \hline
-  2.1 & Estudio de la documentación original & P & & & \\ \hline
-  2.2 & Estudio de la arquitectura y el código fuente original & P & & & \\ \hline
-  2.3 & Estudio de la normativa & P & & & \\ \hline
-  3.1 & Elaboración de la especificación de requisitos del software & P & A & & A \\ \hline
-  3.2 & Elaboración de la especificación de arquitectura del software & P & A & & I \\ \hline
-  3.3 & Elaboración del plan de verificación del software & P & A & & I \\ \hline
-  3.4 & Elaboración del plan de validación del software & P & A & & A \\ \hline
-  3.5 & Selección y configuración del entorno de desarrollo & P & I & & \\ \hline
-  3.6 & Selección de librerías externas & P & I & & \\ \hline
-  3.7 & Implementación de drivers y primitivas & P & & & \\ \hline
-  3.8 & Implementación de módulo de interfaz humano-máquina & P & & & \\ \hline
-  3.9 & Implementación de módulo de medición de velocidad & P & & & \\ \hline
-  3.10 & Implementación de módulo de comunicación y localización & P & & & \\ \hline
-  3.11 & Implementación de módulo de lógica principal & P & & & \\ \hline
-  3.12 & Pruebas y verificación del software & P & I & & \\ \hline
-  3.13 & Elaboración de informe de verificación & P & A & & I \\ \hline
-  4.1 & Revisión y actualización de la arquitectura del hardware & P & A & & I \\ \hline
-  4.2 & Selección de módulos y componentes & P & I & & \\ \hline
-  4.3 & Actualización de los diagramas esquemáticos & P & I & & \\  \hline
-  4.4 & Diseño del circuito impreso & P & I & & \\ \hline
-  4.5 & Fabricación de circuito impreso & P & I & & \\  \hline
-  4.6 & Pruebas y verificación del hardware & P & A & & I \\ \hline
-  5.1 & Integración de módulos constitutivos & P & I & & \\ \hline
-  5.2 & Pruebas de integración y verificación del sistema & P & A & & I \\ \hline
-  5.3 & Pruebas de campo y validación del sistema & P & A & & A \\ \hline
-  5.4 & Elaboración de informe de validación & P & A & & I \\ \hline
-  6.1 & Elaboración del informe de avance & P & A & & I \\ \hline
-  6.2 & Elaboración de la memoria del proyecto & P & A & & I \\ \hline
-  6.3 & Preparación de la presentación final & P & I & & \\ \hline
-\end{tabular}
-}
-\end{table}
-
-{\footnotesize
 Referencias:
 \begin{itemize}
 	\item P = Responsabilidad Primaria
@@ -708,7 +650,86 @@ Referencias:
 	\item I = Informado
 	\item C = Consultado
 \end{itemize}
-} %footnotesize
+
+\begin{table}[!htpb]
+  \centering
+  \begin{tabular}{|c|m{4.3cm}|m{1.2cm}|m{1.2cm}|m{1.2cm}|m{1.2cm}|m{1.2cm}|m{1.2cm}|}
+  \hline
+  \rowcolor[HTML]{C0C0C0} 
+  \cellcolor[HTML]{C0C0C0} &
+    \cellcolor[HTML]{C0C0C0} &
+    \multicolumn{6}{c|}{\cellcolor[HTML]{C0C0C0}Nombres y roles del proyecto} \\ \cline{3-8} 
+  \rowcolor[HTML]{C0C0C0} 
+  \cellcolor[HTML]{C0C0C0} &
+    \cellcolor[HTML]{C0C0C0} &
+    Responsable &
+    Orientador &
+    Orientador &
+    Colaborador &
+    Colaborador &
+    Cliente \\ \cline{3-8} 
+  \rowcolor[HTML]{C0C0C0} 
+  \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}WBS\end{tabular}} &
+    \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}Nombre de la tarea} &
+    \authorname & \supname & \cosupname & Dr. Ing. Ariel Lutenberg & Ing. Sergio Dieleke & \clientename \\ \hline
+    1.1 & Elaboración del plan de proyecto & P & A & A & A & I & I \\ \hline
+    2.1 & Estudio de la documentación original & P & C & & & & \\ \hline
+    2.2 & Estudio de la arquitectura y el código fuente original & P & & & & & \\ \hline
+    2.3 & Estudio de la normativa & P & & & C & & \\ \hline
+    3.1 & Elaboración de la especificación de requisitos del software & P & A & A & I & & A \\ \hline
+    3.2 & Elaboración de la especificación de arquitectura del software & P & A & A & I & & I \\ \hline
+    3.3 & Elaboración del plan de verificación del software & P & A & A & I & & I \\ \hline
+    3.4 & Elaboración del plan de validación del software & P & A & A & I & C & A \\ \hline
+    3.5 & Selección y configuración del entorno de desarrollo & P & I & I & & & \\ \hline
+    3.6 & Selección de librerías externas & P & C & C & & & \\ \hline
+    3.7 & Implementación de drivers y primitivas & P & & & & & \\ \hline
+    3.8 & Implementación de módulo de interfaz humano-máquina & P & & & & & \\ \hline
+    3.9 & Implementación de módulo de medición de velocidad & P & & & & & \\ \hline
+    3.10 & Implementación de módulo de comunicación y localización & P & & & & & \\ \hline
+    3.11 & Implementación de módulo de lógica principal & P & & & & & \\ \hline
+    3.12 & Pruebas y verificación del software & P & I & I & & & \\ \hline
+    3.13 & Elaboración de informe de verificación & P & A & A & & & I \\ \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}[!htpb]
+  \centering
+  \begin{tabular}{|c|m{4.3cm}|m{1.2cm}|m{1.2cm}|m{1.2cm}|m{1.2cm}|m{1.2cm}|m{1.2cm}|}
+  \hline
+  \rowcolor[HTML]{C0C0C0} 
+  \cellcolor[HTML]{C0C0C0} &
+    \cellcolor[HTML]{C0C0C0} &
+    \multicolumn{6}{c|}{\cellcolor[HTML]{C0C0C0}Nombres y roles del proyecto} \\ \cline{3-8} 
+  \rowcolor[HTML]{C0C0C0} 
+  \cellcolor[HTML]{C0C0C0} &
+    \cellcolor[HTML]{C0C0C0} &
+    Responsable &
+    Orientador &
+    Orientador &
+    Colaborador &
+    Colaborador &
+    Cliente \\ \cline{3-8} 
+  \rowcolor[HTML]{C0C0C0} 
+  \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}WBS\end{tabular}} &
+    \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}Nombre de la tarea} &
+    \authorname & \supname & \cosupname & Dr. Ing. Ariel Lutenberg & Ing. Sergio Dieleke & \clientename \\ \hline
+    4.1 & Revisión y actualización de la arquitectura del hardware & P & A & A & I & C & I \\ \hline
+    4.2 & Selección de módulos y componentes & P & C & C & & & \\ \hline
+    4.3 & Actualización de los diagramas esquemáticos & P & I & I & & & \\  \hline
+    4.4 & Diseño del circuito impreso & P & I & I & & & \\ \hline
+    4.5 & Fabricación de circuito impreso & P & I & I & & & \\  \hline
+    4.6 & Pruebas y verificación del hardware & P & I & I & & & \\ \hline
+    5.1 & Integración de módulos constitutivos & P & I & I & & & \\ \hline
+    5.2 & Pruebas de integración y verificación del sistema & P & A & A & I & & I \\ \hline
+    5.3 & Pruebas de campo y validación del sistema & P & A & A & I & C & A \\ \hline
+    5.4 & Elaboración de informe de validación & P & A & A & I & I & A \\ \hline
+    6.1 & Elaboración del informe de avance & P & A & A & I & & I \\ \hline
+    6.2 & Elaboración de la memoria del proyecto & P & A & A & A & & \\ \hline
+    6.3 & Preparación de la presentación final & P & I & I & A & & \\ \hline
+  \end{tabular}
+\end{table}
+
+\newpage
 
 \section{12. Gestión de riesgos}
 \label{sec:riesgos}
