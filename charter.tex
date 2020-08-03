@@ -83,7 +83,7 @@ Buenos Aires, \fechaInicioName
 Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} 
 se titulará ``\ttitle'', consistirá esencialmente en el prototipo de un equipo que permita inhabilitar las señales de 
 corte de tracción y frenado de emergencia en el caso de una falla en uno de los subsistemas de seguridad de una 
-formación ferroviaria, y tendrá un presupuesto preliminar estimado de 630 hs de trabajo y \$55.000, con 
+formación ferroviaria, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y \$55.000, con 
 fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
@@ -349,15 +349,15 @@ En esta sección se deben incluir las historias de usuarios y su ponderación (h
   \begin{enumerate}
   \item Elaboración del plan de proyecto \hfill (20 hs)
   \end{enumerate}
-\item Investigación preliminar \hfill (subtotal 50 hs)
+\item Investigación preliminar \hfill (subtotal 70 hs)
   \begin{enumerate}
   \item Estudio de la documentación original \hfill (20 hs)
   \item Estudio de la arquitectura y el código fuente original \hfill (20 hs)
-  \item Estudio de la normativa \hfill (10 hs)
+  \item Estudio de la normativa \hfill (30 hs)
   \end{enumerate}
-\item Desarrollo del software \hfill (subtotal 285 hs)
+\item Desarrollo del software \hfill (subtotal 235 hs)
   \begin{enumerate}
-  \item Elaboración del plan de garantía de calidad del software \hfill (10 hs)
+  \item Elaboración del plan de garantía de calidad del software \hfill (20 hs)
   \item Elaboración de la especificación de requisitos del software \hfill (20 hs)
   \item Elaboración de la especificación de arquitectura del software \hfill (20 hs)
   \item Elaboración del plan de verificación del software \hfill (10 hs)
@@ -365,10 +365,10 @@ En esta sección se deben incluir las historias de usuarios y su ponderación (h
   \item Selección y configuración del entorno de desarrollo \hfill (10 hs)
   \item Selección de librerías externas \hfill (10 hs)
   \item Implementación de drivers y primitivas \hfill (20 hs)
-  \item Implementación de módulo de interfaz hombre-máquina \hfill (30 hs)
-  \item Implementación de módulo de medición de velocidad \hfill (40 hs)
-  \item Implementación de módulo de comunicación y localización \hfill (40 hs)
-  \item Implementación de módulo de lógica principal \hfill (40 hs)
+  \item Implementación de módulo de interfaz hombre-máquina \hfill (20 hs)
+  \item Implementación de módulo de medición de velocidad \hfill (20 hs)
+  \item Implementación de módulo de comunicación y localización \hfill (30 hs)
+  \item Implementación de módulo de lógica principal \hfill (20 hs)
   \item Pruebas y verificación del software \hfill (20 hs)
   \item Elaboración de informe de verificación \hfill (5 hs)
   \end{enumerate}
@@ -396,7 +396,7 @@ En esta sección se deben incluir las historias de usuarios y su ponderación (h
   \end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: (630 hs)
+Cantidad total de horas: (600 hs)
 
 \newpage
 
@@ -426,38 +426,38 @@ inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig
   \begin{tabularx}{\linewidth}{@{}|c|X|c|c|@{}}
   \hline
   \rowcolor[HTML]{C0C0C0} 
-  WBS & Nombre de la tarea & Inicio & Fin \\ \hline
-  1.1 & Elaboración del plan de proyecto & 2020-06-22 & 2020-08-09 \\ \hline
-  2.1 & Estudio de la documentación original & 2020-06-22 & 2020-07-05 \\ \hline
-  2.2 & Estudio de la arquitectura y el código fuente original & 2020-07-06 & 2020-07-19 \\ \hline
-  2.3 & Estudio de la normativa & 2020-07-20 & 2020-07-26 \\ \hline
-  3.1 & Elaboración del plan de garantía de calidad del software & 2020-07-27 & 2020-08-02 \\  \hline
-  3.2 & Especificación de requisitos del software & 2020-08-03 & 2020-08-09 \\ \hline
-  3.3 & Especificación de arquitectura del software & 2020-08-10 & 2020-08-23 \\ \hline
-  3.4 & Elaboración del plan de verificación del software & 2020-08-24 & 2020-08-30 \\ \hline
-  3.5 & Elaboración del plan de validación del software & 2020-08-31 & 2020-09-06 \\ \hline
-  3.6 & Selección y configuración del entorno de desarrollo & 2020-09-07 & 2020-09-13 \\ \hline
-  3.7 & Selección de librerías externas & 2020-09-14 & 2020-09-20 \\ \hline
-  3.8 & Implementación de drivers y primitivas & 2020-09-21 & 2020-10-04 \\ \hline
-  3.9 & Implementación de módulo de interfaz humano-máquina & 2020-10-05 & 2020-10-18 \\ \hline
-  3.10 & Implementación de módulo de medición de velocidad & 2020-10-19 & 2020-11-15 \\ \hline
-  3.11 & Implementación de módulo de comunicación y localización & 2020-11-16 & 2020-12-20 \\ \hline
-  3.12 & Implementación de módulo de lógica principal & 2020-12-21 & 2021-01-17 \\ \hline
-  3.13 & Pruebas y verificación del software & 2021-01-18 & 2021-01-26 \\ \hline
-  3.14 & Elaboración de informe de verificación & 2021-01-27 & 2021-01-31 \\ \hline
-  4.1 & Revisión y actualización de la arquitectura del hardware & 2021-02-01 & 2021-02-07 \\ \hline
-  4.2 & Selección de módulos y componentes & 2021-02-08 & 2021-02-14 \\ \hline
-  4.3 & Actualización de los diagramas esquemáticos & 2021-02-15 & 2021-02-21 \\  \hline
-  4.4 & Diseño del circuito impreso & 2021-02-22 & 2021-03-14 \\ \hline
-  4.5 & Fabricación del circuito impreso & 2021-03-15 & 2021-03-20 \\ \hline
-  4.6 & Pruebas y verificación del hardware & 2021-03-21 & 2021-04-04 \\ \hline
-  5.1 & Integración de módulos constitutivos & 2021-04-05 & 2021-04-11 \\ \hline
-  5.2 & Pruebas de integración y verificación del sistema & 2021-04-12 & 2021-04-25 \\ \hline
-  5.3 & Pruebas de campo y validación del sistema & 2021-04-26 & 2021-05-02 \\ \hline
-  5.4 & Elaboración de informe de validación & 2021-05-03 & 2021-05-09 \\ \hline
-  6.1 & Elaboración del informe de avance & 2021-05-10 & 2021-05-16 \\ \hline
-  6.2 & Elaboración de la memoria del proyecto & 2021-05-17 & 2021-06-13 \\ \hline
-  6.3 & Preparación de la presentación final & 2021-06-14 & 2021-06-20 \\ \hline
+  WBS  & Nombre de la tarea                                       & Inicio     & Fin        \\ \hline
+  1.1  & Elaboración del plan de proyecto                         & 2020-06-22 & 2020-08-09 \\ \hline
+  2.1  & Estudio de la documentación original                     & 2020-06-22 & 2020-07-05 \\ \hline
+  2.2  & Estudio de la arquitectura y el código fuente original   & 2020-07-06 & 2020-07-19 \\ \hline
+  2.3  & Estudio de la normativa                                  & 2020-07-20 & 2020-08-02 \\ \hline
+  3.1  & Elaboración del plan de garantía de calidad del software & 2020-08-03 & 2020-08-16 \\ \hline
+  3.2  & Especificación de requisitos del software                & 2020-08-17 & 2020-08-23 \\ \hline
+  3.3  & Especificación de arquitectura del software              & 2020-08-24 & 2020-09-06 \\ \hline
+  3.4  & Elaboración del plan de verificación del software        & 2020-09-07 & 2020-09-16 \\ \hline
+  3.5  & Elaboración del plan de validación del software          & 2020-09-17 & 2020-09-27 \\ \hline
+  3.6  & Selección y configuración del entorno de desarrollo      & 2020-09-28 & 2020-10-01 \\ \hline
+  3.7  & Selección de librerías externas                          & 2020-10-02 & 2020-10-08 \\ \hline
+  3.8  & Implementación de drivers y primitivas                   & 2020-10-09 & 2020-10-22 \\ \hline
+  3.9  & Implementación de módulo de interfaz humano-máquina      & 2020-10-23 & 2020-11-05 \\ \hline
+  3.10 & Implementación de módulo de medición de velocidad        & 2020-11-06 & 2020-11-19 \\ \hline
+  3.11 & Implementación de módulo de comunicación y localización  & 2020-11-20 & 2020-12-10 \\ \hline
+  3.12 & Implementación de módulo de lógica principal             & 2020-12-11 & 2020-12-24 \\ \hline
+  3.13 & Pruebas y verificación del software                      & 2020-12-25 & 2020-12-31 \\ \hline
+  3.14 & Elaboración de informe de verificación                   & 2021-01-01 & 2021-01-10 \\ \hline
+  4.1  & Revisión y actualización de la arquitectura del hardware & 2021-01-11 & 2021-01-17 \\ \hline
+  4.2  & Selección de módulos y componentes                       & 2021-01-18 & 2021-01-24 \\ \hline
+  4.3  & Actualización de los diagramas esquemáticos              & 2021-01-25 & 2021-01-31 \\ \hline
+  4.4  & Diseño del circuito impreso                              & 2021-02-01 & 2021-02-28 \\ \hline
+  4.5  & Fabricación del circuito impreso                         & 2021-03-01 & 2021-03-07 \\ \hline
+  4.6  & Pruebas y verificación del hardware                      & 2021-03-08 & 2021-03-21 \\ \hline
+  5.1  & Integración de módulos constitutivos                     & 2021-03-22 & 2021-03-28 \\ \hline
+  5.2  & Pruebas de integración y verificación del sistema        & 2021-03-29 & 2021-04-11 \\ \hline
+  5.3 & Pruebas de campo y validación del sistema                 & 2021-04-12 & 2021-04-25 \\ \hline
+  5.4 & Elaboración de informe de validación                      & 2021-04-26 & 2021-05-02 \\ \hline
+  6.1 & Elaboración del informe de avance                         & 2021-05-03 & 2021-05-09 \\ \hline
+  6.2 & Elaboración de la memoria del proyecto                    & 2021-05-10 & 2021-06-13 \\ \hline
+  6.3 & Preparación de la presentación final                      & 2021-06-14 & 2021-06-20 \\ \hline
   \end{tabularx}
   \label{tab:gantt}
 \end{table}
@@ -474,40 +474,40 @@ inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig
     milestone right shift=5,          % Ancho de los hitos
     bar label font=\small,            % Tamaño de letra de etiquetas en barras
     bar inline label anchor={east}, bar inline label node/.append style={right=2mm} % Etiquetas a la derecha
-  ]{2020-06-22}{2021-01-31}
+  ]{2020-06-22}{2021-01-10}
   \gantttitlecalendar{year, month} \\
   \ganttgroup{Planificación}{2020-06-22}{2020-08-09} \\
     \ganttbar{1.1 Elaboración del plan de proyecto}{2020-06-22}{2020-08-09} \\
-  \ganttgroup{Investigación}{2020-06-22}{2020-07-26} \\
+  \ganttgroup{Investigación}{2020-06-22}{2020-08-02} \\
     \ganttbar{2.1 Estudio de la documentación original}{2020-06-22}{2020-07-05} \\
     \ganttlinkedbar{2.2 Estudio de la arquitectura y el código fuente original}{2020-07-06}{2020-07-19} \\
-    \ganttlinkedbar{2.3 Estudio de la normativa}{2020-07-20}{2020-07-26} \\
-  \ganttgroup{Desarrollo del software}{2020-07-27}{2021-01-31} \\
-    \ganttbar{3.1 Elaboración del plan de garantía de calidad del software}{2020-07-27}{2020-08-02} \\
+    \ganttlinkedbar{2.3 Estudio de la normativa}{2020-07-20}{2020-08-02} \\
+  \ganttgroup{Desarrollo del software}{2020-08-03}{2021-01-10} \\
+    \ganttbar{3.1 Elaboración del plan de garantía de calidad del software}{2020-08-03}{2020-08-16} \\
     \ganttlink{elem5}{elem7}
-    \ganttlinkedbar{3.2 Especificación de requisitos del software}{2020-08-03}{2020-08-09} \\
-    \ganttlinkedbar{3.3 Especificación de arquitectura del software}{2020-08-10}{2020-08-23} \\
-    \ganttlinkedbar{3.4 Elaboración del plan de verificación del software}{2020-08-24}{2020-08-30} \\
-    \ganttlinkedbar{3.5 Elaboración del plan de validación del software}{2020-08-31}{2020-09-06} \\
-    \ganttlinkedbar{3.6 Selección y configuración del entorno de desarrollo}{2020-09-07}{2020-09-13} \\
-    \ganttlinkedbar{3.7 Selección de librerías externas}{2020-09-14}{2020-09-20} \\
-    \ganttlinkedbar{3.8 Implementación de drivers y primitivas}{2020-09-21}{2020-10-04} \\
-    \ganttlinkedbar{3.9 Implementación de módulo de interfaz ...}{2020-10-05}{2020-10-18} \\  
+    \ganttlinkedbar{3.2 Especificación de requisitos del software}{2020-08-17}{2020-08-23} \\
+    \ganttlinkedbar{3.3 Especificación de arquitectura del software}{2020-08-24}{2020-09-06} \\
+    \ganttlinkedbar{3.4 Elaboración del plan de verificación del soft...}{2020-09-07}{2020-09-16} \\
+    \ganttlinkedbar{3.5 Elaboración del plan de validación del ...}{2020-09-17}{2020-09-27} \\
+    \ganttlinkedbar{3.6 Selección y configuración del entorno ...}{2020-09-28}{2020-10-01} \\
+    \ganttlinkedbar{3.7 Selección de librerías externas}{2020-10-02}{2020-10-08} \\
+    \ganttlinkedbar{3.8 Implementación de drivers ...}{2020-10-09}{2020-10-22} \\
+    \ganttlinkedbar{3.9 Implementación de m...}{2020-10-23}{2020-11-05} \\  
     \ganttlinkedbar[
       bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
-    ]{3.10 Implementación de módulo de medición de v...}{2020-10-19}{2020-11-15} \\
+    ]{3.10 Implementación de módulo de medición de velocidad}{2020-11-06}{2020-11-19} \\
     \ganttlinkedbar[
       bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
-    ]{3.11 Implementación de módulo de comunicación y localización}{2020-11-16}{2020-12-20} \\
+    ]{3.11 Implementación de módulo de comunicación y localización}{2020-11-20}{2020-12-10} \\
     \ganttlinkedbar[
       bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
-    ]{3.12 Implementación de módulo de lógica principal}{2020-12-21}{2021-01-17} \\
+    ]{3.12 Implementación de módulo de lógica principal}{2020-12-11}{2020-12-24} \\
     \ganttlinkedbar[
       bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
-    ]{3.13 Pruebas y verificación del software}{2021-01-18}{2021-01-26} \\
+    ]{3.13 Pruebas y verificación del software}{2020-12-25}{2020-12-31} \\
     \ganttlinkedbar[
       bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
-    ]{3.14 Elaboración de informe de verificación}{2021-01-27}{2021-01-31}
+    ]{3.14 Elaboración de informe de verificación}{2021-01-01}{2021-01-10}
 \end{ganttchart}
 \end{center}
 \caption{Diagrama de Gantt (Primera parte)}
@@ -526,27 +526,27 @@ inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig
     milestone right shift=5,          % Ancho de los hitos
     bar label font=\small,            % Tamaño de letra de etiquetas en barras
     bar inline label anchor={east}, bar inline label node/.append style={right=2mm} % Etiquetas a la derecha
-  ]{2021-02-01}{2021-09-12}
+  ]{2021-01-11}{2021-08-22}
   \gantttitlecalendar{year, month} \\
-  \ganttgroup{Desarrollo del hardware}{2021-02-01}{2021-04-04} \\
-    \ganttbar{4.1 Revisión y actualización de la arquitectura del hardware}{2021-02-01}{2021-02-07} \\
-    \ganttlinkedbar{4.2 Selección de módulos y componentes}{2021-02-08}{2021-02-14} \\
-    \ganttlinkedbar{4.3 Actualización de los diagramas esquemáticos}{2021-02-15}{2021-02-21} \\
-    \ganttlinkedbar{4.4 Diseño del circuito impreso}{2021-02-22}{2021-03-14} \\
-    \ganttlinkedbar{4.5 Fabricación del circuito impreso}{2021-03-14}{2021-03-20} \\
-    \ganttlinkedbar{4.6 Pruebas y verificación del hardware}{2021-03-21}{2021-04-04} \\
-  \ganttgroup{Integración del sistema}{2021-04-05}{2021-05-09} \\
-    \ganttbar{5.1 Integración de módulos constitutivos}{2021-04-05}{2021-04-11} \\
+  \ganttgroup{Desarrollo del hardware}{2021-01-11}{2021-03-21} \\
+    \ganttbar{4.1 Revisión y actualización de la arquitectura del hardware}{2021-01-11}{2021-01-17} \\
+    \ganttlinkedbar{4.2 Selección de módulos y componentes}{2021-01-18}{2021-01-24} \\
+    \ganttlinkedbar{4.3 Actualización de los diagramas esquemáticos}{2021-01-25 }{2021-01-31} \\
+    \ganttlinkedbar{4.4 Diseño del circuito impreso}{2021-02-01}{2021-02-28} \\
+    \ganttlinkedbar{4.5 Fabricación del circuito impreso}{2021-03-01}{2021-03-07} \\
+    \ganttlinkedbar{4.6 Pruebas y verificación del hardware}{2021-03-08}{2021-03-21} \\
+  \ganttgroup{Integración del sistema}{2021-03-22}{2021-05-02} \\
+    \ganttbar{5.1 Integración de módulos constitutivos}{2021-03-22}{2021-03-28} \\
     \ganttlink{elem6}{elem8}
-    \ganttlinkedbar{5.2 Pruebas de integración y verificación del sistema}{2021-04-12}{2021-04-25} \\
-    \ganttlinkedbar{5.3 Pruebas de campo y validación del sistema}{2021-04-26}{2021-05-02} \\
-    \ganttlinkedbar{5.4 Elaboración de informe de validación}{2021-05-03}{2021-05-09} \\
-  \ganttgroup{Procesos de finalización}{2021-05-10}{2021-06-20} \\
-    \ganttbar{6.1 Elaboración del informe de avance}{2021-05-10}{2021-05-16} \\
+    \ganttlinkedbar{5.2 Pruebas de integración y verificación del sistema}{2021-03-29}{2021-04-11} \\
+    \ganttlinkedbar{5.3 Pruebas de campo y validación del sistema}{2021-04-12}{2021-04-25} \\
+    \ganttlinkedbar{5.4 Elaboración de informe de validación}{2021-04-26}{2021-05-02} \\
+  \ganttgroup{Procesos de finalización}{2021-05-03}{2021-06-20} \\
+    \ganttbar{6.1 Elaboración del informe de avance}{2021-05-03}{2021-05-09} \\
     \ganttlink{elem11}{elem13}
     \ganttlinkedbar[
       bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
-    ]{6.2 Elaboración de la memoria del proyecto}{2021-05-17}{2021-06-13} \\
+    ]{6.2 Elaboración de la memoria del proyecto}{2021-05-10}{2021-06-13} \\
     \ganttlinkedbar[
       bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
     ]{6.3 Preparación de la presentación final}{2021-06-14}{2021-06-20} \\
@@ -570,9 +570,9 @@ inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig
   \multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}WBS} & \multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Nombre de la tarea\end{tabular}} & PC & Prototipo original del SAL/T & Circuito impreso y componentes & Instru- mental \\ \hline
   1.1 & Elaboración del plan de proyecto & 20 & & & \\ \hline
   2.1 & Estudio de la documentación original & 20 & & & \\ \hline
-  2.2 & Estudio de la arquitectura y el código fuente original & 20 & 10 & & 10 \\ \hline
+  2.2 & Estudio de la arquitectura y el código fuente original & 30 & 20 & & 10 \\ \hline
   2.3 & Estudio de la normativa & 10 & & & \\ \hline
-  3.1 & Elaboración del plan de garantía de calidad & 10 & & & \\  \hline
+  3.1 & Elaboración del plan de garantía de calidad & 20 & & & \\  \hline
   3.2 & Elaboración de la especificación de requisitos & 20 & & & \\ \hline
   3.3 & Elaboración de la especificación de arquitectura & 20 & & & \\ \hline
   3.4 & Elaboración del plan de verificación del software & 10 & & & \\ \hline
@@ -580,10 +580,10 @@ inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig
   3.6 & Selección y configuración del entorno de desarrollo & 10 & & & \\ \hline
   3.7 & Selección de librerías externas & 10 & & & \\ \hline
   3.8 & Implementación de drivers y primitivas & 20 & 20 & & \\ \hline
-  3.9 & Implementación de módulo de interfaz humano-máquina & 30 & 30 & & \\ \hline
-  3.10 & Implementación de módulo de medición de velocidad & 40 & 40 & & \\ \hline
-  3.11 & Implementación de módulo de comunicación y localización & 40 & 40 & & \\ \hline
-  3.12 & Implementación de módulo de lógica principal & 40 & 40 & & \\ \hline
+  3.9 & Implementación de módulo de interfaz humano-máquina & 20 & 20 & & \\ \hline
+  3.10 & Implementación de módulo de medición de velocidad & 20 & 20 & & \\ \hline
+  3.11 & Implementación de módulo de comunicación y localización & 30 & 30 & & \\ \hline
+  3.12 & Implementación de módulo de lógica principal & 20 & 20 & & \\ \hline
   3.13 & Pruebas y verificación del software & 20 & 20 & & 20 \\ \hline
   3.14 & Elaboración de informe de verificación & 5 & & & \\ \hline
   4.1 & Revisión y actualización de la arquitectura del hardware & 20 & & & \\ \hline
@@ -625,8 +625,8 @@ Descripción &
 Relay de seguridad              & 10       & \$ 2.500 & \$ 25.000  \\  \hline
 Otros componentes electrónicos  & N/A      & N/A      & \$ 20.000  \\ \hline
 Fabricación de circuito impreso & N/A      & N/A      & \$ 10.000  \\ \hline
-Mano de obra                   & 630 horas & \$ 1.000 & \$ 630.000 \\ \hline
-\multicolumn{3}{|c|}{SUBTOTAL} & \multicolumn{1}{c|}{\$ 685.000} \\ \hline
+Mano de obra                   & 600 horas & \$ 1.000 & \$ 600.000 \\ \hline
+\multicolumn{3}{|c|}{SUBTOTAL} & \multicolumn{1}{c|}{\$ 655.000} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -634,10 +634,10 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-20\% del costo directo & N/A & N/A & \$ 137.000 \\ \hline
-\multicolumn{3}{|c|}{SUBTOTAL} & \multicolumn{1}{c|}{\$ 137.000 } \\ \hline
+20\% del costo directo & N/A & N/A & \$ 131.000 \\ \hline
+\multicolumn{3}{|c|}{SUBTOTAL} & \multicolumn{1}{c|}{\$ 131.000 } \\ \hline
 \rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} & \multicolumn{1}{c|}{\$ 822.000} \\ \hline
+\multicolumn{3}{|c|}{TOTAL} & \multicolumn{1}{c|}{\$ 786.000} \\ \hline
 \end{tabularx}%
 \end{table}
 
