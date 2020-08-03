@@ -357,7 +357,6 @@ En esta sección se deben incluir las historias de usuarios y su ponderación (h
   \end{enumerate}
 \item Desarrollo del software \hfill (subtotal 235 hs)
   \begin{enumerate}
-  \item Elaboración del plan de garantía de calidad del software \hfill (20 hs)
   \item Elaboración de la especificación de requisitos del software \hfill (20 hs)
   \item Elaboración de la especificación de arquitectura del software \hfill (20 hs)
   \item Elaboración del plan de verificación del software \hfill (10 hs)
@@ -366,9 +365,9 @@ En esta sección se deben incluir las historias de usuarios y su ponderación (h
   \item Selección de librerías externas \hfill (10 hs)
   \item Implementación de drivers y primitivas \hfill (20 hs)
   \item Implementación de módulo de interfaz hombre-máquina \hfill (20 hs)
-  \item Implementación de módulo de medición de velocidad \hfill (20 hs)
+  \item Implementación de módulo de medición de velocidad \hfill (30 hs)
   \item Implementación de módulo de comunicación y localización \hfill (30 hs)
-  \item Implementación de módulo de lógica principal \hfill (20 hs)
+  \item Implementación de módulo de lógica principal \hfill (30 hs)
   \item Pruebas y verificación del software \hfill (20 hs)
   \item Elaboración de informe de verificación \hfill (5 hs)
   \end{enumerate}
@@ -431,20 +430,19 @@ inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig
   2.1  & Estudio de la documentación original                     & 2020-06-22 & 2020-07-05 \\ \hline
   2.2  & Estudio de la arquitectura y el código fuente original   & 2020-07-06 & 2020-07-19 \\ \hline
   2.3  & Estudio de la normativa                                  & 2020-07-20 & 2020-08-02 \\ \hline
-  3.1  & Elaboración del plan de garantía de calidad del software & 2020-08-03 & 2020-08-16 \\ \hline
-  3.2  & Especificación de requisitos del software                & 2020-08-17 & 2020-08-23 \\ \hline
-  3.3  & Especificación de arquitectura del software              & 2020-08-24 & 2020-09-06 \\ \hline
-  3.4  & Elaboración del plan de verificación del software        & 2020-09-07 & 2020-09-16 \\ \hline
-  3.5  & Elaboración del plan de validación del software          & 2020-09-17 & 2020-09-27 \\ \hline
-  3.6  & Selección y configuración del entorno de desarrollo      & 2020-09-28 & 2020-10-01 \\ \hline
-  3.7  & Selección de librerías externas                          & 2020-10-02 & 2020-10-08 \\ \hline
-  3.8  & Implementación de drivers y primitivas                   & 2020-10-09 & 2020-10-22 \\ \hline
-  3.9  & Implementación de módulo de interfaz humano-máquina      & 2020-10-23 & 2020-11-05 \\ \hline
-  3.10 & Implementación de módulo de medición de velocidad        & 2020-11-06 & 2020-11-19 \\ \hline
-  3.11 & Implementación de módulo de comunicación y localización  & 2020-11-20 & 2020-12-10 \\ \hline
-  3.12 & Implementación de módulo de lógica principal             & 2020-12-11 & 2020-12-24 \\ \hline
-  3.13 & Pruebas y verificación del software                      & 2020-12-25 & 2020-12-31 \\ \hline
-  3.14 & Elaboración de informe de verificación                   & 2021-01-01 & 2021-01-10 \\ \hline
+  3.1  & Especificación de requisitos del software                & 2020-08-03 & 2020-08-16 \\ \hline
+  3.2  & Especificación de arquitectura del software              & 2020-08-17 & 2020-09-06 \\ \hline
+  3.3  & Elaboración del plan de verificación del software        & 2020-09-07 & 2020-09-16 \\ \hline
+  3.4  & Elaboración del plan de validación del software          & 2020-09-17 & 2020-09-27 \\ \hline
+  3.5  & Selección y configuración del entorno de desarrollo      & 2020-09-28 & 2020-10-01 \\ \hline
+  3.6  & Selección de librerías externas                          & 2020-10-02 & 2020-10-08 \\ \hline
+  3.7  & Implementación de drivers y primitivas                   & 2020-10-09 & 2020-10-22 \\ \hline
+  3.8  & Implementación de módulo de interfaz humano-máquina      & 2020-10-23 & 2020-11-05 \\ \hline
+  3.9  & Implementación de módulo de medición de velocidad        & 2020-11-06 & 2020-11-19 \\ \hline
+  3.10 & Implementación de módulo de comunicación y localización  & 2020-11-20 & 2020-12-10 \\ \hline
+  3.11 & Implementación de módulo de lógica principal             & 2020-12-11 & 2020-12-24 \\ \hline
+  3.12 & Pruebas y verificación del software                      & 2020-12-25 & 2020-12-31 \\ \hline
+  3.13 & Elaboración de informe de verificación                   & 2021-01-01 & 2021-01-10 \\ \hline
   4.1  & Revisión y actualización de la arquitectura del hardware & 2021-01-11 & 2021-01-17 \\ \hline
   4.2  & Selección de módulos y componentes                       & 2021-01-18 & 2021-01-24 \\ \hline
   4.3  & Actualización de los diagramas esquemáticos              & 2021-01-25 & 2021-01-31 \\ \hline
@@ -483,31 +481,30 @@ inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig
     \ganttlinkedbar{2.2 Estudio de la arquitectura y el código fuente original}{2020-07-06}{2020-07-19} \\
     \ganttlinkedbar{2.3 Estudio de la normativa}{2020-07-20}{2020-08-02} \\
   \ganttgroup{Desarrollo del software}{2020-08-03}{2021-01-10} \\
-    \ganttbar{3.1 Elaboración del plan de garantía de calidad del software}{2020-08-03}{2020-08-16} \\
+    \ganttbar{3.1 Especificación de requisitos del software}{2020-08-03}{2020-08-16} \\
     \ganttlink{elem5}{elem7}
-    \ganttlinkedbar{3.2 Especificación de requisitos del software}{2020-08-17}{2020-08-23} \\
-    \ganttlinkedbar{3.3 Especificación de arquitectura del software}{2020-08-24}{2020-09-06} \\
-    \ganttlinkedbar{3.4 Elaboración del plan de verificación del soft...}{2020-09-07}{2020-09-16} \\
-    \ganttlinkedbar{3.5 Elaboración del plan de validación del ...}{2020-09-17}{2020-09-27} \\
-    \ganttlinkedbar{3.6 Selección y configuración del entorno ...}{2020-09-28}{2020-10-01} \\
-    \ganttlinkedbar{3.7 Selección de librerías externas}{2020-10-02}{2020-10-08} \\
-    \ganttlinkedbar{3.8 Implementación de drivers ...}{2020-10-09}{2020-10-22} \\
-    \ganttlinkedbar{3.9 Implementación de m...}{2020-10-23}{2020-11-05} \\  
+    \ganttlinkedbar{3.2 Especificación de arquitectura del software}{2020-08-17}{2020-09-06} \\
+    \ganttlinkedbar{3.3 Elaboración del plan de verificación del soft...}{2020-09-07}{2020-09-16} \\
+    \ganttlinkedbar{3.4 Elaboración del plan de validación del ...}{2020-09-17}{2020-09-27} \\
+    \ganttlinkedbar{3.5 Selección y configuración del entorno ...}{2020-09-28}{2020-10-01} \\
+    \ganttlinkedbar{3.6 Selección de librerías externas}{2020-10-02}{2020-10-08} \\
+    \ganttlinkedbar{3.7 Implementación de drivers ...}{2020-10-09}{2020-10-22} \\
+    \ganttlinkedbar{3.8 Implementación de m...}{2020-10-23}{2020-11-05} \\  
     \ganttlinkedbar[
       bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
-    ]{3.10 Implementación de módulo de medición de velocidad}{2020-11-06}{2020-11-19} \\
+    ]{3.9 Implementación de módulo de medición de velocidad}{2020-11-06}{2020-11-19} \\
     \ganttlinkedbar[
       bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
-    ]{3.11 Implementación de módulo de comunicación y localización}{2020-11-20}{2020-12-10} \\
+    ]{3.10 Implementación de módulo de comunicación y localización}{2020-11-20}{2020-12-10} \\
     \ganttlinkedbar[
       bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
-    ]{3.12 Implementación de módulo de lógica principal}{2020-12-11}{2020-12-24} \\
+    ]{3.11 Implementación de módulo de lógica principal}{2020-12-11}{2020-12-24} \\
     \ganttlinkedbar[
       bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
-    ]{3.13 Pruebas y verificación del software}{2020-12-25}{2020-12-31} \\
+    ]{3.12 Pruebas y verificación del software}{2020-12-25}{2020-12-31} \\
     \ganttlinkedbar[
       bar inline label anchor={west}, bar inline label node/.append style={left=2mm}  % Etiqueta a la izquierda
-    ]{3.14 Elaboración de informe de verificación}{2021-01-01}{2021-01-10}
+    ]{3.13 Elaboración de informe de verificación}{2021-01-01}{2021-01-10}
 \end{ganttchart}
 \end{center}
 \caption{Diagrama de Gantt (Primera parte)}
@@ -572,20 +569,19 @@ inicio y finalización de cada tarea. En las figuras \ref{fig:gantt1} y \ref{fig
   2.1 & Estudio de la documentación original & 20 & & & \\ \hline
   2.2 & Estudio de la arquitectura y el código fuente original & 30 & 20 & & 10 \\ \hline
   2.3 & Estudio de la normativa & 10 & & & \\ \hline
-  3.1 & Elaboración del plan de garantía de calidad & 20 & & & \\  \hline
-  3.2 & Elaboración de la especificación de requisitos & 20 & & & \\ \hline
-  3.3 & Elaboración de la especificación de arquitectura & 20 & & & \\ \hline
-  3.4 & Elaboración del plan de verificación del software & 10 & & & \\ \hline
-  3.5 & Elaboración del plan de validación del software & 10 & & & \\ \hline
-  3.6 & Selección y configuración del entorno de desarrollo & 10 & & & \\ \hline
-  3.7 & Selección de librerías externas & 10 & & & \\ \hline
-  3.8 & Implementación de drivers y primitivas & 20 & 20 & & \\ \hline
-  3.9 & Implementación de módulo de interfaz humano-máquina & 20 & 20 & & \\ \hline
-  3.10 & Implementación de módulo de medición de velocidad & 20 & 20 & & \\ \hline
-  3.11 & Implementación de módulo de comunicación y localización & 30 & 30 & & \\ \hline
-  3.12 & Implementación de módulo de lógica principal & 20 & 20 & & \\ \hline
-  3.13 & Pruebas y verificación del software & 20 & 20 & & 20 \\ \hline
-  3.14 & Elaboración de informe de verificación & 5 & & & \\ \hline
+  3.1 & Elaboración de la especificación de requisitos & 20 & & & \\ \hline
+  3.2 & Elaboración de la especificación de arquitectura & 20 & & & \\ \hline
+  3.3 & Elaboración del plan de verificación del software & 10 & & & \\ \hline
+  3.4 & Elaboración del plan de validación del software & 10 & & & \\ \hline
+  3.5 & Selección y configuración del entorno de desarrollo & 10 & & & \\ \hline
+  3.6 & Selección de librerías externas & 10 & & & \\ \hline
+  3.7 & Implementación de drivers y primitivas & 20 & 20 & & \\ \hline
+  3.8 & Implementación de módulo de interfaz humano-máquina & 20 & 20 & & \\ \hline
+  3.9  & Implementación de módulo de medición de velocidad & 30 & 30 & & \\ \hline
+  3.10 & Implementación de módulo de comunicación y localización & 30 & 30 & & \\ \hline
+  3.11 & Implementación de módulo de lógica principal & 30 & 30 & & \\ \hline
+  3.12 & Pruebas y verificación del software & 20 & 20 & & 20 \\ \hline
+  3.13 & Elaboración de informe de verificación & 5 & & & \\ \hline
   4.1 & Revisión y actualización de la arquitectura del hardware & 20 & & & \\ \hline
   4.2 & Selección de módulos y componentes & 10 & & & \\ \hline
   4.3 & Actualización de los diagramas esquemáticos & 20 & & & \\  \hline
@@ -680,20 +676,19 @@ Referencias:
     2.1 & Estudio de la documentación original & P & C & & & & \\ \hline
     2.2 & Estudio de la arquitectura y el código fuente original & P & & & & & \\ \hline
     2.3 & Estudio de la normativa & P & & & C & & \\ \hline
-    3.1 & Elaboración del plan de garantía de calidad del software & P & A & A & I & & I \\  \hline
-    3.2 & Elaboración de la especificación de requisitos del software & P & A & A & I & & A \\ \hline
-    3.3 & Elaboración de la especificación de arquitectura del software & P & A & A & I & & I \\ \hline
-    3.4 & Elaboración del plan de verificación del software & P & A & A & I & & I \\ \hline
-    3.5 & Elaboración del plan de validación del software & P & A & A & I & C & A \\ \hline
-    3.6 & Selección y configuración del entorno de desarrollo & P & I & I & & & \\ \hline
-    3.7 & Selección de librerías externas & P & C & C & & & \\ \hline
-    3.8 & Implementación de drivers y primitivas & P & I & I & & & \\ \hline
-    3.9 & Implementación de módulo de interfaz humano-máquina & P & I & I & & & \\ \hline
-    3.10 & Implementación de módulo de medición de velocidad & P & I & I & & & \\ \hline
-    3.11 & Implementación de módulo de comunicación y localización & P & I & I & & & \\ \hline
-    3.12 & Implementación de módulo de lógica principal & P & I & I & & & \\ \hline
-    3.13 & Pruebas y verificación del software & P & I & I & & & \\ \hline
-    3.14 & Elaboración de informe de verificación & P & A & A & & & I \\ \hline
+    3.1 & Elaboración de la especificación de requisitos del software & P & A & A & I & & A \\ \hline
+    3.2 & Elaboración de la especificación de arquitectura del software & P & A & A & I & & I \\ \hline
+    3.3 & Elaboración del plan de verificación del software & P & A & A & I & & I \\ \hline
+    3.4 & Elaboración del plan de validación del software & P & A & A & I & C & A \\ \hline
+    3.5 & Selección y configuración del entorno de desarrollo & P & I & I & & & \\ \hline
+    3.6 & Selección de librerías externas & P & C & C & & & \\ \hline
+    3.7 & Implementación de drivers y primitivas & P & I & I & & & \\ \hline
+    3.8 & Implementación de módulo de interfaz humano-máquina & P & I & I & & & \\ \hline
+    3.9 & Implementación de módulo de medición de velocidad & P & I & I & & & \\ \hline
+    3.10 & Implementación de módulo de comunicación y localización & P & I & I & & & \\ \hline
+    3.11 & Implementación de módulo de lógica principal & P & I & I & & & \\ \hline
+    3.12 & Pruebas y verificación del software & P & I & I & & & \\ \hline
+    3.13 & Elaboración de informe de verificación & P & A & A & & & I \\ \hline
     4.1 & Revisión y actualización de la arquitectura del hardware & P & A & A & I & C & I \\ \hline
     4.2 & Selección de módulos y componentes & P & C & C & & & \\ \hline
     4.3 & Actualización de los diagramas esquemáticos & P & I & I & & & \\  \hline
