@@ -861,7 +861,7 @@ Ocurrencia baja, es muy poco probable que los archivos se pierdan o sean irrecup
   \item Verificación:\\
   Se verificará la hoja de datos de la llave rotativa y se comprobará que cumple con niveles de seguridad adecuados para la aplicación.
   \item Validación:\\
-  Se comprobará que con la llave precintada no hay forma de activar el modo aislado. Sacando el precinto, se colocará la llave en la posición AL y se verificará que se enciendan los leds indicadores correspondientes.
+  Se comprobará que con la llave precintada no hay forma de activar el modo aislado. Sacando el precinto, se colocará la llave en el modo aislado y se verificará que se enciendan los leds indicadores correspondientes.
 \end{itemize}
 
 \item Req \#2: La interfaz debe indicar el estado actual del sistema. \\
@@ -1017,109 +1017,82 @@ Req \#31: La estimación de velocidad debe tener una precisión del 2\% de fondo
 
 \newpage
 
-\item Req \#32: En modo aislado limitado el sistema debe evitar la aplicación del corte de tracción.
-\begin{consigna}{red}
+\item Req \#32: En modo aislado limitado el sistema debe evitar la aplicación del corte de tracción. \\
+Req \#33: En modo aislado limitado el sistema debe evitar la aplicación del freno de emergencia.
 \begin{itemize}
   \item Verificación:\\
+  Con la llave rotativa en el modo aislado, se medirán los contactos de los relés conectados a las señales de seguridad.
   \item Validación:\\
+  Con la llave rotativa en el modo aislado y el equipo conectado a los subsistemas de seguridad de la formación, se verificará que el sistema evita la aplicación de las señales de seguridad.
 \end{itemize}
-\end{consigna}
 
-\item Req \#33: En modo aislado limitado el sistema debe evitar la aplicación del freno de emergencia.
-\begin{consigna}{red}
+\item Req \#34: Ante cualquier error interno, el sistema debe dejar de intervenir en la aplicación del corte de tracción. \\
+Req \#35: Ante cualquier error interno, el sistema debe dejar de intervenir en la aplicación del freno de emergencia.
 \begin{itemize}
   \item Verificación:\\
+  Se simulará la falla de un relé de seguridad en un entorno de depuración y se medirán los contactos de los relés conectados a las señales de seguridad.
   \item Validación:\\
+  Se desoldará uno de los contactos de un relé de seguridad y se verificará que el equipo detecta el error y desactiva el resto de los relés.
 \end{itemize}
-\end{consigna}
-
-\item Req \#34: Ante cualquier error interno, el sistema debe dejar de intervenir en la aplicación del corte de tracción.
-\begin{consigna}{red}
-\begin{itemize}
-  \item Verificación:\\
-  \item Validación:\\
-\end{itemize}
-\end{consigna}
-
-\item Req \#35: Ante cualquier error interno, el sistema debe dejar de intervenir en la aplicación del freno de emergencia.
-\begin{consigna}{red}
-\begin{itemize}
-  \item Verificación:\\
-  \item Validación:\\
-\end{itemize}
-\end{consigna}
 
 \item Req \#36: En modo aislado limitado el sistema debe emitir una señal sonora intermitente a través de un buzzer.
-\begin{consigna}{red}
 \begin{itemize}
   \item Verificación:\\
+  Se colocará la llave rotativa en el modo aislado y se verificará con un osciloscopio la señal en el buzzer.
   \item Validación:\\
+  Se colocará la llave rotativa en el modo aislado y se verificará que se active de la señal sonora intermitente.
 \end{itemize}
-\end{consigna}
 
 \item Req \#37: Si al pasar de modo normal a modo aislado limitado no se cuenta con una estimación de velocidad, debe activar el corte de tracción y el freno de emergencia por 30 segundos.
-\begin{consigna}{red}
 \begin{itemize}
   \item Verificación:\\
+  Se deshabilitarán todas las fuentes de velocidad y se colocará la llave rotativa en el modo aislado.
+  Se medirán los contactos de los relés conectados a las señales de seguridad para verificar su activación.
   \item Validación:\\
+  Se deshabilitarán todas las fuentes de velocidad y se colocará la llave rotativa en el modo aislado.
+  Con el equipo conectado a los subsistemas de seguridad de la formación, se verificará que el sistema active las señales de seguridad.
 \end{itemize}
-\end{consigna}
 
-\item Req \#38: Si se supera una velocidad configurable (por defecto 30 km/h), debe activar el corte de tracción y emitir una señal sonora continua a través de un buzzer.
-\begin{consigna}{red}
-\begin{itemize}
-  \item Verificación:\\
-  \item Validación:\\
-\end{itemize}
-\end{consigna}
+\newpage
 
-\item Req \#39: Si se supera una velocidad configurable (por defecto 36 km/h), debe activar el freno de emergencia.
-\begin{consigna}{red}
+\item Req \#38: Si se supera una velocidad configurable (por defecto 30 km/h), debe activar el corte de tracción y emitir una señal sonora continua a través de un buzzer. \\
+Req \#39: Si se supera una velocidad configurable (por defecto 36 km/h), debe activar el freno de emergencia. \\
+Req \#40: Una vez aplicado, el corte de tracción debe dejar de aplicarse si la velocidad vuelve a ser menor a una velocidad configurable (por defecto 25 km/h). \\
+Req \#41: Una vez aplicado, el freno de emergencia sólo debe dejar de aplicarse luego de un tiempo configurable (por defecto 30 segundos) desde que se superó el límite.
 \begin{itemize}
   \item Verificación:\\
+  Se harán pruebas con un controlador externo que simule las distintas fuentes de velocidad.
+  Se medirán los contactos de los relés conectados a las señales de seguridad para verificar su activación al superar los límites establecidos.
   \item Validación:\\
+  Se conectará el equipo al registrador de eventos con un generador de impulsos y se verificará que se activen las señales correspondientes en caso de superarse los límites.
 \end{itemize}
-\end{consigna}
-
-\item Req \#40: Una vez aplicado, el corte de tracción debe dejar de aplicarse si la velocidad vuelve a ser menor a una velocidad configurable (por defecto 25 km/h).
-\begin{consigna}{red}
-\begin{itemize}
-  \item Verificación:\\
-  \item Validación:\\
-\end{itemize}
-\end{consigna}
-
-\item Req \#41: Una vez aplicado, el freno de emergencia sólo debe dejar de aplicarse luego de un tiempo configurable (por defecto 30 segundos) desde que se superó el límite.
-\begin{consigna}{red}
-\begin{itemize}
-  \item Verificación:\\
-  \item Validación:\\
-\end{itemize}
-\end{consigna}
 
 \item Req \#42: Si la lectura de velocidad es inválida, debe activar y desactivar el corte de tracción y freno de emergencia de manera alternada en ciclos de tiempo configurables.
-\begin{consigna}{red}
 \begin{itemize}
   \item Verificación:\\
+  Estando en modo aislado, se deshabilitarán todas las fuentes de velocidad.
+  Se medirán los contactos de los relés conectados a las señales de seguridad para verificar su activación con los ciclos configurados.
   \item Validación:\\
+  Estando en modo aislado, se deshabilitarán todas las fuentes de velocidad.
+  Con el equipo conectado a los subsistemas de seguridad de la formación, se verificará que el sistema active las señales de seguridad en los ciclos configurados.
 \end{itemize}
-\end{consigna}
 
 \item Req \#44: Los conectores del equipo deben ser unívocos imposibilitando la conexión incorrecta.
-\begin{consigna}{red}
 \begin{itemize}
   \item Verificación:\\
+  Se estudiarán las hojas de datos de los conectores seleccionados.
   \item Validación:\\
+  Se realizarán pruebas de conexionado con personas que no hayan participado en el diseño del equipo.
 \end{itemize}
-\end{consigna}
 
 \item Req \#45: El sistema debe poseer una única placa de circuito impreso con el procesador y periféricos necesarios para el procesamiento de las señales del material rodante.
-\begin{consigna}{red}
 \begin{itemize}
   \item Verificación:\\
+  Se ejecutarán pruebas de conectividad y reglas de diseño para el circuito impreso.
+  Se harán pruebas de continuidad en las placas de circuito impreso fabricadas.
   \item Validación:\\
+  Se entregará la documentación de la arquitectura y el diseño del equipo al cliente.
 \end{itemize}
-\end{consigna}
 
 \end{itemize}
 
