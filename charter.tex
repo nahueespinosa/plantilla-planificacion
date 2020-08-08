@@ -855,24 +855,373 @@ Ocurrencia baja, es muy poco probable que los archivos se pierdan o sean irrecup
 \label{sec:calidad}
 
 \begin{consigna}{red}
-Para cada uno de los requerimientos del proyecto indique:
-\begin{itemize} 
-\item Req \#1: Copiar acá el requerimiento.
-
-Verificación y validación:
+Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, etc.
+\end{consigna}
 
 \begin{itemize}
-\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente:\\
-Detallar 
-\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido:\\
-Detallar  
+\item Req \#1: La interfaz debe contar con una llave rotativa precintable para activar el modo aislado limitado.
+\begin{itemize}
+  \item Verificación:\\
+  Se verificará la hoja de datos de la llave rotativa y se comprobará que cumple con niveles de seguridad adecuados para la aplicación.
+  \item Validación:\\
+  Se comprobará que con la llave precintada no hay forma de activar el modo aislado, se colocará la llave en la posición AL y se verificará que se enciendan los leds indicadores correspondientes.
 \end{itemize}
 
+\item Req \#2: La interfaz debe indicar el estado actual del sistema.
+\begin{itemize}
+  \item Verificación:\\
+  Se hará una prueba que encienda los leds de la interfaz humano-máquina de forma secuencial.
+  \item Validación:\\
+  Se activará el modo aislado limitado y se verificará que enciendan los leds indicadores correspondientes.
 \end{itemize}
 
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, etc.
+\item Req \#3: La interfaz debe mostrar la velocidad media del equipo en km/h con 4 dígitos.
+\begin{itemize}
+  \item Verificación:\\
+  Se hará una prueba que encienda el display de la interfaz humano-máquina y haga un barrido de valores desde cero al límite máximo de velocidad.
+  \item Validación:\\
+  Se activará el modo aislado limitado y se verificará que se muestre el valor correcto en el display.
+\end{itemize}
 
+\item Req \#4: La interfaz debe indicar el estado de la señal de corte de tracción.
+\begin{itemize}
+  \item Verificación:\\
+  Se hará una prueba que encienda los leds de la interfaz humano-máquina de forma secuencial.
+  \item Validación:\\
+  Se activará el modo aislado limitado y se verificará que enciendan los leds indicadores correspondientes.
+\end{itemize}
+
+\item Req \#5: La interfaz debe indicar el estado de la señal de freno de emergencia.
+\begin{itemize}
+  \item Verificación:\\
+  Se hará una prueba que encienda los leds de la interfaz humano-máquina de forma secuencial.
+  \item Validación:\\
+  Se activará el modo aislado limitado y se verificará que enciendan los leds indicadores correspondientes.
+\end{itemize}
+
+\item Req \#6: La interfaz debe indicar la presencia de un comando remoto de la central operativa.
+\begin{itemize}
+  \item Verificación:\\
+  Se hará una prueba que encienda los leds de la interfaz humano-máquina de forma secuencial.
+  \item Validación:\\
+  Se activará el modo aislado limitado y se verificará que enciendan los leds indicadores correspondientes.
+\end{itemize}
+
+\item Req \#7: La interfaz debe indicar el estado de los módulos GPS.
+\begin{itemize}
+  \item Verificación:\\
+  Se hará una prueba que encienda los leds de la interfaz humano-máquina de forma secuencial.
+  \item Validación:\\
+  Se activará el modo aislado limitado y se verificará que enciendan los leds indicadores correspondientes.
+\end{itemize}
+
+\item Req \#8: La interfaz debe indicar el estado de la alimentación.
+\begin{itemize}
+  \item Verificación:\\
+  Se hará una prueba que encienda los leds de la interfaz humano-máquina de forma secuencial.
+  \item Validación:\\
+  Se activará el modo aislado limitado y se verificará que enciendan los leds indicadores correspondientes.
+\end{itemize}
+
+\item Req \#9: El sistema debe informar al registrador de eventos la activación del modo aislado limitado.
+\begin{itemize}
+  \item Verificación:\\
+  Se medirán los contactos de la salida correspondiente y se verificará el cambio de estado cuando se activa el modo aislado limitado.
+  \item Validación:\\
+  Se conectará el equipo al registrador de eventos Hasler y se comprobará que registra correctamente la activación del modo aislado limitado.
+\end{itemize}
+
+\item Req \#10: El sistema debe informar al registrador de eventos si la alimentación es correcta.
+\begin{itemize}
+  \item Verificación:\\
+  Se relizará un ensayo con una fuente de alimentación de laboratorio.
+  Se medirán los contactos de la salida correspondiente y se verificará el cambio de estado cuando disminuye la tensión de alimentación fuera del rango aceptable.
+  \item Validación:\\
+  Se conectará el equipo a una fuente de alimentación de una formación y al registrador de eventos Hasler.
+  Se comprobará que registra correctamente que la alimentación está dentro del rango adecuado.
+\end{itemize}
+
+\item Req \#11: El sistema debe informar al registrador de eventos la activación del freno de emergencia.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
 \end{consigna}
+
+\item Req \#12: El sistema debe informar al registrador de eventos la activación del corte de tracción.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#13: El sistema debe informar periódicamente (con un tiempo configurable) su estado a la central operativa a través de la red de datos GPRS, 3G ó 4G.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#14: El sistema debe utilizar la antena GPRS/GPS ya disponible en la formación.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#15: Debe existir la posibilidad de usar 2 proveedores distintos de datos de manera simultánea.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#16: El protocolo de comunicación con la central operativa debe ser MQTT.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#17: El sistema debe ser capaz de recibir un comando remoto que anule el corte de tracción y el freno de emergencia bajo cualquier condición (modo aislado total).
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#18:  El sistema debe ser capaz de recibir un comando remoto que active el corte de tracción y el freno de emergencia bajo cualquier condición (modo parada total).
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#19: El sistema debe ser capaz de recibir un comando remoto que active el corte de tracción y anule el freno de emergencia bajo cualquier condición (modo coche en deriva).
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#20: El sistema debe ser capaz de recibir un comando remoto que active el corte de tracción y el freno de emergencia de forma intermitente en ciclos de tiempo configurables (modo intermitente).
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#21: El sistema debe ser capaz de recibir un comando remoto que cancele cualquier comando remoto vigente.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#22: El sistema debe ser capaz de recibir comandos remotos que modifiquen sus parámetros internos configurables.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#23: Si no se recibe un nuevo comando remoto luego de un tiempo configurable (por defecto 10 segundos, máximo 1 minuto), debe volver al algoritmo de activación de corte de tracción y freno de emergencia por defecto.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#24: Ante un comando remoto recibido, debe enviar una confirmación de recepción que permita a la central operativa decidir si es necesaria o no una retransmisión.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#25: Debe utilizar algún mecanismo de encriptación para el enlace con la central operativa.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#26: El modo normal el sistema no debe intervenir en el funcionamiento del material rodante (prioridad alta).
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#27: El sistema debe ser capaz de recibir la velocidad a partir de una señal digital provista por el registrador de eventos Hasler Teloc 1500. 
+\begin{itemize}
+  \item Verificación:\\
+  Se harán pruebas con un controlador externo que simule las distintas fuentes de velocidad y se verificará el valor mostrado en el display.
+  \item Validación:\\
+  Se conectará el SAL/T al registrador de eventos con un generador de impulsos y se verificará el valor mostrado en el display.
+\end{itemize}
+
+\item Req \#28: El sistema debe ser capaz de calcular la velocidad a partir de un generador de impulsos ópticos instalado en una o varias ruedas de la formación.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#29: El sistema debe ser capaz de calcular la velocidad a partir de un sistema GPS integrado.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#30: El rango de velocidad soportado por el sistema tiene que estar entre 0 y 120 km/h.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#31: La estimación de velocidad debe tener una precisión del 2\% de fondo de escala. 
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#32: En modo aislado limitado el sistema debe evitar la aplicación del corte de tracción.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#33: En modo aislado limitado el sistema debe evitar la aplicación del freno de emergencia.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#34: Ante cualquier error interno, el sistema debe dejar de intervenir en la aplicación del corte de tracción.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#35: Ante cualquier error interno, el sistema debe dejar de intervenir en la aplicación del freno de emergencia.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#36: En modo aislado limitado el sistema debe emitir una señal sonora intermitente a través de un buzzer.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#37: Si al pasar de modo normal a modo aislado limitado no se cuenta con una estimación de velocidad, debe activar el corte de tracción y el freno de emergencia por 30 segundos.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#38: Si se supera una velocidad configurable (por defecto 30 km/h), debe activar el corte de tracción y emitir una señal sonora continua a través de un buzzer.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#39: Si se supera una velocidad configurable (por defecto 36 km/h), debe activar el freno de emergencia.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#40: Una vez aplicado, el corte de tracción debe dejar de aplicarse si la velocidad vuelve a ser menor a una velocidad configurable (por defecto 25 km/h).
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#41: Una vez aplicado, el freno de emergencia sólo debe dejar de aplicarse luego de un tiempo configurable (por defecto 30 segundos) desde que se superó el límite.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#42: Si la lectura de velocidad es inválida, debe activar y desactivar el corte de tracción y freno de emergencia de manera alternada en ciclos de tiempo configurables.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#43: El sistema debe utilizar la alimentación presente en el material rodante en el rango de 60 V a 110 V de tensión continua.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#44: Los conectores del equipo deben ser unívocos imposibilitando la conexión incorrecta.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\item Req \#45: El sistema debe poseer una única placa de circuito impreso con el procesador y periféricos necesarios para el procesamiento de las señales del material rodante.
+\begin{consigna}{red}
+\begin{itemize}
+  \item Verificación:\\
+  \item Validación:\\
+\end{itemize}
+\end{consigna}
+
+\end{itemize}
 
 \section{14. Comunicación del proyecto}
 \label{sec:comunicaciones}
