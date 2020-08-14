@@ -64,7 +64,7 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 1.2      & Se agrega gestión del tiempo, recursos humanos y materiales.                        & 27/07/2020 \\ \hline
 1.3      & Correcciones en la gestión de recursos, modificaciones en la duración de las tareas.
            Se agrega gestión de calidad, comunicación, compras y procesos de cierre.           & 08/08/2020 \\ \hline
-1.4      & Se agrega sección de historias de usuarios y se hacen cambios menores.              & 13/08/2020 \\ \hline
+1.4      & Se agrega sección de historias de usuarios y se hacen correcciones menores.         & 14/08/2020 \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -320,18 +320,49 @@ desarrollado durante la quinta fase del ciclo de vida del proyecto, para facilit
   \end{enumerate}
 \end{enumerate}
 
+\newpage
+
 \section{Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
-En esta sección se deben incluir las historias de usuarios y su ponderación (history points). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
-\end{consigna}
+Una historia de usuario es una descripción corta y simple de una característica contada desde la perspectiva de un usuario o cliente. La prioridad es un número entero que representa el grado de importancia y la ponderación es un número entero que representa el tamaño de la historia comparada con otras de similar tipo.
+La escala utilizada para ambos valores es de 0 a 10.
+
+\begin{itemize}
+  \item Como conductor de la formación quiero una indicación visual y sonora para saber si el SAL/T está en modo aislado limitado.
+  \begin{itemize}
+    \item Prioridad: 10
+    \item Ponderación: 3
+  \end{itemize}
+  \item Como conductor de la formación quiero una indicación visual de la activación de las señales de corte de tracción y freno de emergencia para conocer el estado del sistema de seguridad.
+  \begin{itemize}
+    \item Prioridad: 10
+    \item Ponderación: 3
+  \end{itemize}
+  \item Como encargado de mantenimiento preventivo quiero una indicación visual si el equipo detecta alguna falla interna para solicitar el reemplazo del mismo.
+  \begin{itemize}
+    \item Prioridad: 5
+    \item Ponderación: 5
+  \end{itemize}
+  \item Como operador de la central remota quiero ver el estado de todos los SAL/T en una única pantalla para detectar rápidamente cualquier eventualidad.
+  \begin{itemize}
+    \item Prioridad: 2
+    \item Ponderación: 7
+  \end{itemize}
+  \item Como operador de la central remota quiero ver una lista de comandos enviados a un SAL/T con indicadores para confirmar la recepción de los mismos.
+  \begin{itemize}
+    \item Prioridad: 6
+    \item Ponderación: 7
+  \end{itemize}
+\end{itemize}
 
 \section{5. Entregables principales del proyecto}
 \label{sec:entregables}
 
 \begin{itemize}
-\item Código fuente y documentación del firmware
+\item Especificación de requisitos de software
+\item Especificación de arquitectua de software
+\item Código fuente y documentación del software
 \item Diagramas esquemáticos del circuito impreso
 \item Archivos para fabricación del circuito impreso
 \item Informe de avance
